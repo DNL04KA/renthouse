@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="990" height="640" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+<defs>
+  <!-- Crow's foot (many) — marker-end -->
+  <marker id="many" viewBox="-10 0 10 10" refX="0" refY="5"
+          markerWidth="10" markerHeight="10" orient="auto"
+          markerUnits="userSpaceOnUse">
+    <line x1="0" y1="5" x2="-8" y2="1" stroke="#555" stroke-width="1.2"/>
+    <line x1="0" y1="5" x2="-8" y2="5" stroke="#555" stroke-width="1.2"/>
+    <line x1="0" y1="5" x2="-8" y2="9" stroke="#555" stroke-width="1.2"/>
+  </marker>
+  <!-- One (||) — marker-start -->
+  <marker id="one" viewBox="0 0 8 10" refX="0" refY="5"
+          markerWidth="8" markerHeight="10" orient="auto"
+          markerUnits="userSpaceOnUse">
+    <line x1="2" y1="0" x2="2" y2="10" stroke="#555" stroke-width="1.2"/>
+    <line x1="5" y1="0" x2="5" y2="10" stroke="#555" stroke-width="1.2"/>
+  </marker>
+  <!-- One (||) — marker-end (для 1:1) -->
+  <marker id="one-end" viewBox="-8 0 8 10" refX="0" refY="5"
+          markerWidth="8" markerHeight="10" orient="auto"
+          markerUnits="userSpaceOnUse">
+    <line x1="-2" y1="0" x2="-2" y2="10" stroke="#555" stroke-width="1.2"/>
+    <line x1="-5" y1="0" x2="-5" y2="10" stroke="#555" stroke-width="1.2"/>
+  </marker>
+</defs>
+
+<!-- ============ USERS x=20 y=195 w=195 h=224 ============ -->
+<rect x="20" y="195" width="195" height="224" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="20" y="195" width="195" height="24" fill="#ebebeb"/>
+<line x1="20" y1="219" x2="215" y2="219" stroke="#444" stroke-width="1.5"/>
+<text x="117" y="211" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Пользователь</text>
+<line x1="48" y1="219" x2="48" y2="419" stroke="#aaa" stroke-width="0.5"/>
+<text x="34" y="233" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="55" y="233" font-size="11" fill="#111">id</text>
+<line x1="20" y1="239" x2="215" y2="239" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="253" font-size="11" fill="#111">username</text>
+<line x1="20" y1="259" x2="215" y2="259" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="273" font-size="11" fill="#111">password_hash</text>
+<line x1="20" y1="279" x2="215" y2="279" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="293" font-size="11" fill="#111">role</text>
+<line x1="20" y1="299" x2="215" y2="299" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="313" font-size="11" fill="#111">is_active</text>
+<line x1="20" y1="319" x2="215" y2="319" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="333" font-size="11" fill="#111">name</text>
+<line x1="20" y1="339" x2="215" y2="339" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="353" font-size="11" fill="#111">first_name</text>
+<line x1="20" y1="359" x2="215" y2="359" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="373" font-size="11" fill="#111">last_name</text>
+<line x1="20" y1="379" x2="215" y2="379" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="393" font-size="11" fill="#111">phone</text>
+<line x1="20" y1="399" x2="215" y2="399" stroke="#aaa" stroke-width="0.5"/>
+<text x="55" y="413" font-size="11" fill="#111">created_at</text>
+
+<!-- ============ PROPERTIES x=255 y=20 w=195 h=244 ============ -->
+<rect x="255" y="20" width="195" height="244" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="255" y="20" width="195" height="24" fill="#ebebeb"/>
+<line x1="255" y1="44" x2="450" y2="44" stroke="#444" stroke-width="1.5"/>
+<text x="352" y="36" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Объект аренды</text>
+<line x1="283" y1="44" x2="283" y2="264" stroke="#aaa" stroke-width="0.5"/>
+<text x="269" y="58" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="290" y="58" font-size="11" fill="#111">id</text>
+<line x1="255" y1="64" x2="450" y2="64" stroke="#aaa" stroke-width="0.5"/>
+<text x="269" y="78" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="290" y="78" font-size="11" fill="#111">owner_id</text>
+<line x1="255" y1="84" x2="450" y2="84" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="98" font-size="11" fill="#111">type</text>
+<line x1="255" y1="104" x2="450" y2="104" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="118" font-size="11" fill="#111">listing_type</text>
+<line x1="255" y1="124" x2="450" y2="124" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="138" font-size="11" fill="#111">city</text>
+<line x1="255" y1="144" x2="450" y2="144" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="158" font-size="11" fill="#111">street</text>
+<line x1="255" y1="164" x2="450" y2="164" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="178" font-size="11" fill="#111">house</text>
+<line x1="255" y1="184" x2="450" y2="184" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="198" font-size="11" fill="#111">area</text>
+<line x1="255" y1="204" x2="450" y2="204" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="218" font-size="11" fill="#111">base_rent</text>
+<line x1="255" y1="224" x2="450" y2="224" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="238" font-size="11" fill="#111">currency</text>
+<line x1="255" y1="244" x2="450" y2="244" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="258" font-size="11" fill="#111">status</text>
+
+<!-- ============ TENANTS x=255 y=440 w=195 h=164 ============ -->
+<rect x="255" y="440" width="195" height="164" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="255" y="440" width="195" height="24" fill="#ebebeb"/>
+<line x1="255" y1="464" x2="450" y2="464" stroke="#444" stroke-width="1.5"/>
+<text x="352" y="456" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Арендатор</text>
+<line x1="283" y1="464" x2="283" y2="604" stroke="#aaa" stroke-width="0.5"/>
+<text x="269" y="478" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="290" y="478" font-size="11" fill="#111">id</text>
+<line x1="255" y1="484" x2="450" y2="484" stroke="#aaa" stroke-width="0.5"/>
+<text x="269" y="498" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="290" y="498" font-size="11" fill="#111">user_id</text>
+<line x1="255" y1="504" x2="450" y2="504" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="518" font-size="11" fill="#111">type</text>
+<line x1="255" y1="524" x2="450" y2="524" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="538" font-size="11" fill="#111">name</text>
+<line x1="255" y1="544" x2="450" y2="544" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="558" font-size="11" fill="#111">phone</text>
+<line x1="255" y1="564" x2="450" y2="564" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="578" font-size="11" fill="#111">email</text>
+<line x1="255" y1="584" x2="450" y2="584" stroke="#aaa" stroke-width="0.5"/>
+<text x="290" y="598" font-size="11" fill="#111">tax_id</text>
+
+<!-- ============ LEASE_CONTRACTS x=500 y=185 w=215 h=244 ============ -->
+<rect x="500" y="185" width="215" height="244" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="500" y="185" width="215" height="24" fill="#ebebeb"/>
+<line x1="500" y1="209" x2="715" y2="209" stroke="#444" stroke-width="1.5"/>
+<text x="607" y="201" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Договор аренды</text>
+<line x1="528" y1="209" x2="528" y2="429" stroke="#aaa" stroke-width="0.5"/>
+<text x="514" y="223" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="535" y="223" font-size="11" fill="#111">id</text>
+<line x1="500" y1="229" x2="715" y2="229" stroke="#aaa" stroke-width="0.5"/>
+<text x="514" y="243" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="535" y="243" font-size="11" fill="#111">property_id</text>
+<line x1="500" y1="249" x2="715" y2="249" stroke="#aaa" stroke-width="0.5"/>
+<text x="514" y="263" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="535" y="263" font-size="11" fill="#111">tenant_id</text>
+<line x1="500" y1="269" x2="715" y2="269" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="283" font-size="11" fill="#111">number</text>
+<line x1="500" y1="289" x2="715" y2="289" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="303" font-size="11" fill="#111">start_date</text>
+<line x1="500" y1="309" x2="715" y2="309" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="323" font-size="11" fill="#111">end_date</text>
+<line x1="500" y1="329" x2="715" y2="329" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="343" font-size="11" fill="#111">rent_amount</text>
+<line x1="500" y1="349" x2="715" y2="349" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="363" font-size="11" fill="#111">currency</text>
+<line x1="500" y1="369" x2="715" y2="369" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="383" font-size="11" fill="#111">payment_period</text>
+<line x1="500" y1="389" x2="715" y2="389" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="403" font-size="11" fill="#111">deposit_amount</text>
+<line x1="500" y1="409" x2="715" y2="409" stroke="#aaa" stroke-width="0.5"/>
+<text x="535" y="423" font-size="11" fill="#111">status</text>
+
+<!-- ============ PAYMENTS x=770 y=280 w=195 h=164 ============ -->
+<rect x="770" y="280" width="195" height="164" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="770" y="280" width="195" height="24" fill="#ebebeb"/>
+<line x1="770" y1="304" x2="965" y2="304" stroke="#444" stroke-width="1.5"/>
+<text x="867" y="296" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Платёж</text>
+<line x1="798" y1="304" x2="798" y2="444" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="318" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="805" y="318" font-size="11" fill="#111">id</text>
+<line x1="770" y1="324" x2="965" y2="324" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="338" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="338" font-size="11" fill="#111">contract_id</text>
+<line x1="770" y1="344" x2="965" y2="344" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="358" font-size="11" fill="#111">due_date</text>
+<line x1="770" y1="364" x2="965" y2="364" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="378" font-size="11" fill="#111">paid_date</text>
+<line x1="770" y1="384" x2="965" y2="384" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="398" font-size="11" fill="#111">amount</text>
+<line x1="770" y1="404" x2="965" y2="404" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="418" font-size="11" fill="#111">currency</text>
+<line x1="770" y1="424" x2="965" y2="424" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="438" font-size="11" fill="#111">status</text>
+
+<!-- ============ CONVERSATIONS x=770 y=20 w=205 h=124 ============ -->
+<rect x="770" y="20" width="205" height="124" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="770" y="20" width="205" height="24" fill="#ebebeb"/>
+<line x1="770" y1="44" x2="975" y2="44" stroke="#444" stroke-width="1.5"/>
+<text x="872" y="36" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Переписка</text>
+<line x1="798" y1="44" x2="798" y2="144" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="58" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="805" y="58" font-size="11" fill="#111">id</text>
+<line x1="770" y1="64" x2="975" y2="64" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="78" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="78" font-size="11" fill="#111">property_id</text>
+<line x1="770" y1="84" x2="975" y2="84" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="98" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="98" font-size="11" fill="#111">tenant_id</text>
+<line x1="770" y1="104" x2="975" y2="104" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="118" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="118" font-size="11" fill="#111">landlord_id</text>
+<line x1="770" y1="124" x2="975" y2="124" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="138" font-size="11" fill="#111">status</text>
+
+<!-- ============ MESSAGES x=770 y=490 w=195 h=124 ============ -->
+<rect x="770" y="490" width="195" height="124" fill="white" stroke="#444" stroke-width="1.5"/>
+<rect x="770" y="490" width="195" height="24" fill="#ebebeb"/>
+<line x1="770" y1="514" x2="965" y2="514" stroke="#444" stroke-width="1.5"/>
+<text x="867" y="506" text-anchor="middle" font-style="italic" font-size="12" fill="#111">Сообщение</text>
+<line x1="798" y1="514" x2="798" y2="614" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="528" text-anchor="middle" font-size="10" fill="#444">PK</text>
+<text x="805" y="528" font-size="11" fill="#111">id</text>
+<line x1="770" y1="534" x2="965" y2="534" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="548" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="548" font-size="11" fill="#111">conversation_id</text>
+<line x1="770" y1="554" x2="965" y2="554" stroke="#aaa" stroke-width="0.5"/>
+<text x="784" y="568" text-anchor="middle" font-size="10" fill="#444">FK</text>
+<text x="805" y="568" font-size="11" fill="#111">sender_id</text>
+<line x1="770" y1="574" x2="965" y2="574" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="588" font-size="11" fill="#111">text</text>
+<line x1="770" y1="594" x2="965" y2="594" stroke="#aaa" stroke-width="0.5"/>
+<text x="805" y="608" font-size="11" fill="#111">is_read</text>
+
+<!-- ===== СВЯЗИ ===== -->
+
+<!-- 1. users(1) → properties(N): owner_id — 1:N -->
+<polyline points="215,229 235,229 235,74 255,74"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 2. users(1) → tenants(1): user_id — 1:1 -->
+<polyline points="215,229 240,229 240,494 255,494"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#one-end)"/>
+
+<!-- 3. properties(1) → lease_contracts(N): property_id — 1:N -->
+<polyline points="450,54 475,54 475,239 500,239"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 4. tenants(1) → lease_contracts(N): tenant_id — 1:N -->
+<polyline points="450,474 476,474 476,259 500,259"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 5. lease_contracts(1) → payments(N): contract_id — 1:N -->
+<polyline points="715,219 742,219 742,334 770,334"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 6. properties(1) → conversations(N): property_id — 1:N -->
+<polyline points="450,54 450,14 762,14 762,74 770,74"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 7. users(1) → conversations(N): tenant_id — 1:N -->
+<polyline points="215,229 215,7 762,7 762,94 770,94"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 8. users(1) → conversations(N): landlord_id — 1:N -->
+<polyline points="215,229 211,229 211,617 762,617 762,114 770,114"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 9. conversations(1) → messages(N): conversation_id — 1:N -->
+<polyline points="975,54 979,54 979,544 965,544"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+<!-- 10. users(1) → messages(N): sender_id — 1:N -->
+<polyline points="215,229 215,623 762,623 762,564 770,564"
+  fill="none" stroke="#555" stroke-width="1"
+  marker-start="url(#one)" marker-end="url(#many)"/>
+
+</svg>

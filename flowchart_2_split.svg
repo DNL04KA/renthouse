@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="620" height="580" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#222"/>
+    </marker>
+  </defs>
+
+  <!-- ========== КОЛОНКА 1 ========== -->
+
+  <!-- Начало -->
+  <ellipse cx="150" cy="35" rx="60" ry="20" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="40" text-anchor="middle">Начало</text>
+
+  <line x1="150" y1="55" x2="150" y2="78" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Ввести логин и пароль -->
+  <rect x="62" y="80" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="101" text-anchor="middle">Ввести логин</text>
+  <text x="150" y="118" text-anchor="middle">и пароль</text>
+
+  <line x1="150" y1="130" x2="150" y2="157" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Данные верны? -->
+  <polygon points="150,159 245,194 150,229 55,194" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="189" text-anchor="middle">Данные</text>
+  <text x="150" y="205" text-anchor="middle">верны?</text>
+
+  <!-- Нет — возврат к вводу -->
+  <polyline points="55,194 14,194 14,105 62,105" fill="none" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="31" y="187" text-anchor="middle" font-size="11">Нет</text>
+
+  <!-- Да — вниз -->
+  <line x1="150" y1="229" x2="150" y2="255" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="133" y="247" font-size="11">Да</text>
+
+  <!-- Перейти в «Финансы» -->
+  <rect x="62" y="257" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="278" text-anchor="middle">Перейти в раздел</text>
+  <text x="150" y="295" text-anchor="middle">«Финансы»</text>
+
+  <line x1="150" y1="307" x2="150" y2="333" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Система загружает список платежей -->
+  <rect x="62" y="335" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="356" text-anchor="middle">Система загружает</text>
+  <text x="150" y="373" text-anchor="middle">список платежей</text>
+
+  <line x1="150" y1="385" x2="150" y2="411" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Выбрать платёж из таблицы -->
+  <rect x="62" y="413" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="434" text-anchor="middle">Выбрать платёж</text>
+  <text x="150" y="451" text-anchor="middle">из таблицы</text>
+
+  <line x1="150" y1="463" x2="150" y2="490" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Коннектор А (низ колонки 1) -->
+  <circle cx="150" cy="510" r="18" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="150" y="515" text-anchor="middle" font-size="13" font-weight="bold">А</text>
+
+
+  <!-- ========== КОЛОНКА 2 ========== -->
+
+  <!-- Коннектор А (верх колонки 2) -->
+  <circle cx="460" cy="35" r="18" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="40" text-anchor="middle" font-size="13" font-weight="bold">А</text>
+
+  <line x1="460" y1="53" x2="460" y2="78" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Нажать «Оплатить» -->
+  <rect x="372" y="80" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="101" text-anchor="middle">Нажать кнопку</text>
+  <text x="460" y="118" text-anchor="middle">«Оплатить»</text>
+
+  <line x1="460" y1="130" x2="460" y2="157" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Запрос к серверу -->
+  <rect x="372" y="159" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="180" text-anchor="middle">Запрос к серверу</text>
+  <text x="460" y="197" text-anchor="middle">PATCH /payments/{id}/pay</text>
+
+  <line x1="460" y1="209" x2="460" y2="236" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Запрос успешен? -->
+  <polygon points="460,238 558,275 460,312 362,275" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="270" text-anchor="middle">Запрос</text>
+  <text x="460" y="287" text-anchor="middle">успешен?</text>
+
+  <!-- Нет — возврат к «Нажать «Оплатить»» -->
+  <polyline points="362,275 320,275 320,105 372,105" fill="none" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="337" y="268" text-anchor="middle" font-size="11">Нет</text>
+
+  <!-- Да — вниз -->
+  <line x1="460" y1="312" x2="460" y2="338" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="443" y="330" font-size="11">Да</text>
+
+  <!-- Обновить статус -->
+  <rect x="372" y="340" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="361" text-anchor="middle">Обновить статус</text>
+  <text x="460" y="378" text-anchor="middle">платежа → «Оплачено»</text>
+
+  <line x1="460" y1="390" x2="460" y2="416" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Уведомление -->
+  <rect x="372" y="418" width="176" height="50" fill="white" stroke="#222" stroke-width="1.5"/>
+  <text x="460" y="439" text-anchor="middle">Уведомление</text>
+  <text x="460" y="456" text-anchor="middle">«Оплачено!»</text>
+
+  <line x1="460" y1="468" x2="460" y2="494" stroke="#222" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Конец -->
+  <ellipse cx="460" cy="516" rx="60" ry="20" fill="white" stroke="#222" stroke-width="2"/>
+  <text x="460" y="521" text-anchor="middle">Конец</text>
+
+</svg>

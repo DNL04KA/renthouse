@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="132" viewBox="0 0 510 132">
+
+  <rect x="3" y="3" width="504" height="126" fill="white" stroke="black" stroke-width="1"/>
+
+  <!-- Руководство (центр x=255) -->
+  <rect x="178" y="7" width="154" height="36" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="255" y="22" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Руководство</text>
+  <text x="255" y="36" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">системой</text>
+
+  <!-- Вертикаль вниз и горизонтальная шина -->
+  <line x1="255" y1="43" x2="255" y2="60" stroke="black" stroke-width="1.5"/>
+  <line x1="59"  y1="60" x2="451" y2="60" stroke="black" stroke-width="1.5"/>
+
+  <!-- Вертикали (центры: 59, 157, 255, 353, 451) -->
+  <line x1="59"  y1="60" x2="59"  y2="72" stroke="black" stroke-width="1.5"/>
+  <line x1="157" y1="60" x2="157" y2="72" stroke="black" stroke-width="1.5"/>
+  <line x1="255" y1="60" x2="255" y2="72" stroke="black" stroke-width="1.5"/>
+  <line x1="353" y1="60" x2="353" y2="72" stroke="black" stroke-width="1.5"/>
+  <line x1="451" y1="60" x2="451" y2="72" stroke="black" stroke-width="1.5"/>
+
+  <!-- Отдел 1: Маркетинга -->
+  <rect x="14" y="72" width="90" height="48" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="59" y="93" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Отдел</text>
+  <text x="59" y="107" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">маркетинга</text>
+
+  <!-- Отдел 2: Информационных технологий -->
+  <rect x="112" y="72" width="90" height="48" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="157" y="85" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Отдел</text>
+  <text x="157" y="98" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">информационных</text>
+  <text x="157" y="111" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">технологий</text>
+
+  <!-- Отдел 3: Финансово-расчётный -->
+  <rect x="210" y="72" width="90" height="48" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="255" y="85" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Финансово-</text>
+  <text x="255" y="98" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">расчётный</text>
+  <text x="255" y="111" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">отдел</text>
+
+  <!-- Отдел 4: по работе с арендаторами -->
+  <rect x="308" y="72" width="90" height="48" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="353" y="85" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Отдел по работе</text>
+  <text x="353" y="98" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">с арендаторами</text>
+  <text x="353" y="111" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">и договорами</text>
+
+  <!-- Отдел 5: по работе с объектами недвижимости -->
+  <rect x="406" y="72" width="90" height="48" rx="5" ry="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="451" y="85" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">Отдел по работе</text>
+  <text x="451" y="98" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">с объектами</text>
+  <text x="451" y="111" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" font-style="italic">недвижимости</text>
+
+</svg>

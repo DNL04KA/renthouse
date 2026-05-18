@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="730" viewBox="0 0 1100 730">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Фон -->
+  <rect x="1" y="1" width="1098" height="728" fill="white" stroke="black" stroke-width="1"/>
+
+  <!-- Граница системы -->
+  <rect x="128" y="12" width="844" height="700" fill="none" stroke="black" stroke-width="2"/>
+  <text x="550" y="30" font-family="Times New Roman,serif" font-size="13"
+        text-anchor="middle" font-weight="bold" font-style="italic">АСУ аренды недвижимости</text>
+
+  <!-- ══════════════════════════════════════
+       ЛЕВАЯ КОЛОНКА вариантов использования
+       cx=300, rx=108, ry=15
+       ══════════════════════════════════════ -->
+
+  <!-- UC1 -->
+  <ellipse cx="300" cy="85"  rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="82"  font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Просматривать объект</text>
+  <text x="300" y="94"  font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">недвижимости</text>
+
+  <!-- UC2 -->
+  <ellipse cx="300" cy="145" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="142" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Оставить заявку</text>
+  <text x="300" y="154" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">на объект</text>
+
+  <!-- UC3 -->
+  <ellipse cx="300" cy="255" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="259" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Авторизоваться</text>
+
+  <!-- UC4 -->
+  <ellipse cx="300" cy="315" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="312" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Зарегистрироваться</text>
+  <text x="300" y="324" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">в системе</text>
+
+  <!-- UC5 -->
+  <ellipse cx="300" cy="430" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="427" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Просматривать договор</text>
+  <text x="300" y="439" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">аренды</text>
+
+  <!-- UC6 -->
+  <ellipse cx="300" cy="495" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="492" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Просматривать историю</text>
+  <text x="300" y="504" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">платежей</text>
+
+  <!-- UC7 -->
+  <ellipse cx="300" cy="560" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="557" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Производить оплату</text>
+  <text x="300" y="569" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">аренды</text>
+
+  <!-- UC8 -->
+  <ellipse cx="300" cy="625" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="300" y="622" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Продлить / изменить</text>
+  <text x="300" y="634" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">договор</text>
+
+  <!-- ══════════════════════════════════════
+       ПРАВАЯ КОЛОНКА вариантов использования
+       cx=770, rx=108, ry=15
+       ══════════════════════════════════════ -->
+
+  <!-- UC9 -->
+  <ellipse cx="770" cy="85"  rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="82"  font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Обработать заявку</text>
+  <text x="770" y="94"  font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">на аренду</text>
+
+  <!-- UC10 -->
+  <ellipse cx="770" cy="150" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="147" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Ответить на заявку</text>
+  <text x="770" y="159" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">арендатора</text>
+
+  <!-- UC11 -->
+  <ellipse cx="770" cy="215" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="212" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Заключить договор</text>
+  <text x="770" y="224" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">аренды</text>
+
+  <!-- UC12 -->
+  <ellipse cx="770" cy="310" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="314" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Рассчитать задолженность</text>
+
+  <!-- UC13 -->
+  <ellipse cx="770" cy="375" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="372" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Сформировать графики</text>
+  <text x="770" y="384" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">платежей</text>
+
+  <!-- UC14 -->
+  <ellipse cx="770" cy="455" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="452" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Просматривать отчёт</text>
+  <text x="770" y="464" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">по объектам</text>
+
+  <!-- UC15 -->
+  <ellipse cx="770" cy="520" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="517" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Просматривать отчёт</text>
+  <text x="770" y="529" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">по задолженности</text>
+
+  <!-- UC16 -->
+  <ellipse cx="770" cy="610" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="607" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Управлять пользователями</text>
+  <text x="770" y="619" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">и ролями</text>
+
+  <!-- UC17 -->
+  <ellipse cx="770" cy="670" rx="108" ry="15" fill="white" stroke="black" stroke-width="1.3"/>
+  <text x="770" y="667" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">Создать учётную запись</text>
+  <text x="770" y="679" font-family="Times New Roman,serif" font-size="8.5" text-anchor="middle" font-style="italic">пользователя</text>
+
+  <!-- ══════════════════════════════════════════════
+       ОТНОШЕНИЯ «включить» (пунктирные стрелки)
+       Стрелка направлена К включаемому прецеденту
+       ══════════════════════════════════════════════ -->
+
+  <!-- UC2 -«включить»-> UC3: Оставить заявку включает Авторизоваться (вертикально) -->
+  <line x1="300" y1="160" x2="300" y2="240"
+        stroke="black" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="316" y="204" font-family="Times New Roman,serif" font-size="8"
+        text-anchor="start" font-style="italic">«включить»</text>
+
+  <!-- UC9 -«включить»-> UC3: Обработать заявку включает Авторизоваться
+       (длинная диагональ — пересекает схему, как в образце) -->
+  <line x1="662" y1="88" x2="408" y2="248"
+        stroke="black" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="548" y="156" font-family="Times New Roman,serif" font-size="8"
+        text-anchor="middle" font-style="italic" transform="rotate(-19,548,156)">«включить»</text>
+
+  <!-- UC13 -«включить»-> UC12: Графики платежей включает Расчёт задолженности -->
+  <line x1="770" y1="360" x2="770" y2="325"
+        stroke="black" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="784" y="344" font-family="Times New Roman,serif" font-size="8"
+        text-anchor="start" font-style="italic">«включить»</text>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 1: Незарегистрированный пользователь
+       cx=62, head_cy=205, arm_y=228
+       ══════════════════════════════════════ -->
+  <circle cx="62" cy="205" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="217" x2="62" y2="242" stroke="black" stroke-width="1.3"/>
+  <line x1="44" y1="228" x2="80" y2="228" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="242" x2="49" y2="262" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="242" x2="75" y2="262" stroke="black" stroke-width="1.3"/>
+  <text x="62" y="279" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">Незарегистри-</text>
+  <text x="62" y="289" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">рованный</text>
+  <text x="62" y="299" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">пользователь</text>
+  <!-- Линии от правого конца руки (80,228) к левому краю эллипсов (192, cy) -->
+  <line x1="80" y1="228" x2="192" y2="85"  stroke="black" stroke-width="1"/>
+  <line x1="80" y1="228" x2="192" y2="145" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="228" x2="192" y2="255" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="228" x2="192" y2="315" stroke="black" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 2: Арендатор
+       cx=62, head_cy=495, arm_y=518
+       ══════════════════════════════════════ -->
+  <circle cx="62" cy="495" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="507" x2="62" y2="532" stroke="black" stroke-width="1.3"/>
+  <line x1="44" y1="518" x2="80" y2="518" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="532" x2="49" y2="552" stroke="black" stroke-width="1.3"/>
+  <line x1="62" y1="532" x2="75" y2="552" stroke="black" stroke-width="1.3"/>
+  <text x="62" y="569" font-family="Times New Roman,serif" font-size="8" text-anchor="middle" font-style="italic">Арендатор</text>
+  <!-- Линии от (80,518) к левому краю эллипсов -->
+  <line x1="80" y1="518" x2="192" y2="430" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="518" x2="192" y2="495" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="518" x2="192" y2="560" stroke="black" stroke-width="1"/>
+  <line x1="80" y1="518" x2="192" y2="625" stroke="black" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 3: Менеджер по аренде
+       cx=1040, head_cy=105, arm_y=128
+       ══════════════════════════════════════ -->
+  <circle cx="1040" cy="105" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="117" x2="1040" y2="142" stroke="black" stroke-width="1.3"/>
+  <line x1="1022" y1="128" x2="1058" y2="128" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="142" x2="1027" y2="162" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="142" x2="1053" y2="162" stroke="black" stroke-width="1.3"/>
+  <text x="1040" y="179" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">Менеджер</text>
+  <text x="1040" y="189" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">по аренде</text>
+  <!-- Линии от левого конца руки (1022,128) к правому краю эллипсов (878, cy) -->
+  <line x1="1022" y1="128" x2="878" y2="85"  stroke="black" stroke-width="1"/>
+  <line x1="1022" y1="128" x2="878" y2="150" stroke="black" stroke-width="1"/>
+  <line x1="1022" y1="128" x2="878" y2="215" stroke="black" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 4: Бухгалтер по аренде
+       cx=1040, head_cy=300, arm_y=323
+       ══════════════════════════════════════ -->
+  <circle cx="1040" cy="300" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="312" x2="1040" y2="337" stroke="black" stroke-width="1.3"/>
+  <line x1="1022" y1="323" x2="1058" y2="323" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="337" x2="1027" y2="357" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="337" x2="1053" y2="357" stroke="black" stroke-width="1.3"/>
+  <text x="1040" y="374" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">Бухгалтер</text>
+  <text x="1040" y="384" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">по аренде</text>
+  <!-- Линии к UC12, UC13 -->
+  <line x1="1022" y1="323" x2="878" y2="310" stroke="black" stroke-width="1"/>
+  <line x1="1022" y1="323" x2="878" y2="375" stroke="black" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 5: Руководитель
+       cx=1040, head_cy=468, arm_y=491
+       ══════════════════════════════════════ -->
+  <circle cx="1040" cy="468" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="480" x2="1040" y2="505" stroke="black" stroke-width="1.3"/>
+  <line x1="1022" y1="491" x2="1058" y2="491" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="505" x2="1027" y2="525" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="505" x2="1053" y2="525" stroke="black" stroke-width="1.3"/>
+  <text x="1040" y="542" font-family="Times New Roman,serif" font-size="8" text-anchor="middle" font-style="italic">Руководитель</text>
+  <!-- Линии к UC14, UC15 -->
+  <line x1="1022" y1="491" x2="878" y2="455" stroke="black" stroke-width="1"/>
+  <line x1="1022" y1="491" x2="878" y2="520" stroke="black" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       АКТОР 6: Администратор системы
+       cx=1040, head_cy=625, arm_y=648
+       ══════════════════════════════════════ -->
+  <circle cx="1040" cy="625" r="12" fill="white" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="637" x2="1040" y2="662" stroke="black" stroke-width="1.3"/>
+  <line x1="1022" y1="648" x2="1058" y2="648" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="662" x2="1027" y2="682" stroke="black" stroke-width="1.3"/>
+  <line x1="1040" y1="662" x2="1053" y2="682" stroke="black" stroke-width="1.3"/>
+  <text x="1040" y="699" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">Администратор</text>
+  <text x="1040" y="709" font-family="Times New Roman,serif" font-size="7.5" text-anchor="middle" font-style="italic">системы</text>
+  <!-- Линии к UC16, UC17 -->
+  <line x1="1022" y1="648" x2="878" y2="610" stroke="black" stroke-width="1"/>
+  <line x1="1022" y1="648" x2="878" y2="670" stroke="black" stroke-width="1"/>
+
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500">
+  <defs>
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#000" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- Внешняя рамка страницы -->
+  <rect x="10" y="10" width="680" height="480" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="14" y="14" width="672" height="472" fill="none" stroke="black" stroke-width="0.5"/>
+
+  <!-- Центральный блок (основной прямоугольник) -->
+  <!-- Основная заливка -->
+  <rect x="220" y="170" width="260" height="150" fill="white" stroke="black" stroke-width="1.5"/>
+  <!-- Штриховка правой части блока (как в BPwin) -->
+  <rect x="440" y="170" width="40" height="150" fill="url(#hatch)" stroke="none"/>
+  <!-- Правая граница поверх штриховки -->
+  <line x1="480" y1="170" x2="480" y2="320" stroke="black" stroke-width="1.5"/>
+  <!-- Левая внутренняя линия штрихованной зоны -->
+  <line x1="440" y1="170" x2="440" y2="320" stroke="black" stroke-width="1"/>
+
+  <!-- Название центрального блока -->
+  <text x="330" y="230" font-family="Times New Roman, serif" font-size="13" text-anchor="middle" dominant-baseline="middle">Система управления</text>
+  <text x="330" y="248" font-family="Times New Roman, serif" font-size="13" text-anchor="middle" dominant-baseline="middle">арендой</text>
+  <text x="330" y="266" font-family="Times New Roman, serif" font-size="13" text-anchor="middle" dominant-baseline="middle">недвижимости</text>
+
+  <!-- Нумерация узла: $0 и 0 -->
+  <text x="226" y="315" font-family="Times New Roman, serif" font-size="11" text-anchor="start">$0</text>
+  <text x="472" y="315" font-family="Times New Roman, serif" font-size="11" text-anchor="middle">0</text>
+
+  <!-- ===== СТРЕЛКА ВХОДА (слева) — Запрос пользователя ===== -->
+  <line x1="50" y1="245" x2="218" y2="245" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="44" y="225" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">Запрос</text>
+  <text x="44" y="240" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">пользователя</text>
+  <text x="44" y="255" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">(арендатора /</text>
+  <text x="44" y="270" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">арендодателя)</text>
+
+  <!-- ===== СТРЕЛКА УПРАВЛЕНИЯ (сверху) — Нормативные требования ===== -->
+  <line x1="350" y1="60" x2="350" y2="168" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="350" y="35" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">Нормативно-правовые</text>
+  <text x="350" y="51" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">требования к аренде</text>
+  <text x="350" y="67" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">недвижимости</text>
+
+  <!-- ===== СТРЕЛКИ ВЫХОДОВ (справа) — две стрелки ===== -->
+  <!-- Выход 1: Отказ в обработке запроса -->
+  <line x1="482" y1="215" x2="645" y2="215" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="655" y="207" font-family="Times New Roman, serif" font-size="12" text-anchor="start">Отказ в</text>
+  <text x="655" y="221" font-family="Times New Roman, serif" font-size="12" text-anchor="start">обработке запроса</text>
+
+  <!-- Выход 2: Успешное выполнение операции -->
+  <line x1="482" y1="275" x2="645" y2="275" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="655" y="267" font-family="Times New Roman, serif" font-size="12" text-anchor="start">Успешное</text>
+  <text x="655" y="281" font-family="Times New Roman, serif" font-size="12" text-anchor="start">выполнение операции</text>
+
+  <!-- ===== СТРЕЛКА МЕХАНИЗМА (снизу) — Веб-платформа RentHouse ===== -->
+  <line x1="350" y1="420" x2="350" y2="322" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="350" y="435" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">Веб-платформа RentHouse</text>
+  <text x="350" y="451" font-family="Times New Roman, serif" font-size="12" text-anchor="middle">(PostgreSQL + FastAPI + React)</text>
+
+  <!-- Маркер стрелки -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Подпись диаграммы внизу -->
+  <text x="350" y="490" font-family="Times New Roman, serif" font-size="11" text-anchor="middle" fill="#333">
+    Рисунок 2.2 – Контекстная диаграмма модуля управления арендой недвижимости
+  </text>
+</svg>

@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1580" viewBox="0 0 2100 1580" style="background:#ffffff;font-family:Arial, sans-serif;">
+<defs>
+
+  <marker id="open_arr" viewBox="0 0 10 10" refX="8" refY="5"
+          markerWidth="8" markerHeight="8" orient="auto">
+    <path d="M0,1 L9,5 L0,9" fill="none" stroke="#444" stroke-width="1.6"/>
+  </marker>
+  <marker id="tri_arr" viewBox="0 0 10 10" refX="8" refY="5"
+          markerWidth="9" markerHeight="9" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="none" stroke="#000" stroke-width="1.5"/>
+  </marker>
+</defs>
+<rect x="205" y="22" width="1660" height="1115" rx="8" fill="#FAFAFA" stroke="#555555" stroke-width="2"/>
+<rect x="205" y="0" width="330" height="22" rx="3" fill="#555555" stroke="#555555" stroke-width="1"/>
+<text x="370" y="15" font-size="12" text-anchor="middle" font-weight="bold" fill="#ffffff">АСУ Аренды Недвижимости</text>
+<rect x="220" y="42" width="520" height="180" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="220" y="20" width="132" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="286" y="35" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Аутентификация</text>
+<rect x="760" y="42" width="660" height="180" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="760" y="20" width="156" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="838" y="35" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Публичный каталог</text>
+<rect x="220" y="272" width="520" height="268" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="220" y="250" width="180" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="310" y="265" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Управление объектами</text>
+<rect x="760" y="272" width="400" height="175" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="760" y="250" width="204" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="862" y="265" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Управление арендаторами</text>
+<rect x="1175" y="272" width="620" height="268" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="1175" y="250" width="92" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="1221" y="265" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Сообщения</text>
+<rect x="220" y="595" width="820" height="258" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="220" y="573" width="140" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="290" y="588" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Договоры аренды</text>
+<rect x="1055" y="595" width="740" height="258" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="1055" y="573" width="76" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="1093" y="588" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Платежи</text>
+<rect x="220" y="913" width="520" height="195" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="220" y="891" width="148" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="294" y="906" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Дашборд и отчёты</text>
+<rect x="760" y="913" width="660" height="195" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="760" y="891" width="156" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="838" y="906" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Администрирование</text>
+<rect x="1435" y="913" width="360" height="195" rx="6" fill="#EEF3FB" stroke="#7A9EC8" stroke-width="1.3"/>
+<rect x="1435" y="891" width="76" height="22" rx="3" fill="#4A6FA5" stroke="#4A6FA5" stroke-width="1"/>
+<text x="1473" y="906" font-size="11" text-anchor="middle" font-weight="bold" fill="#ffffff">Система</text>
+<ellipse cx="300" cy="132" rx="74" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="300" y="136.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Зарегистрироваться</text>
+<ellipse cx="475" cy="100" rx="60" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="475" y="104.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Войти в систему</text>
+<ellipse cx="475" cy="178" rx="80" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="475" y="182.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Проверить учётные данные</text>
+<ellipse cx="655" cy="132" rx="62" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="655" y="136.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Выйти из системы</text>
+<ellipse cx="840" cy="120" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="840" y="124.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть каталог</text>
+<ellipse cx="1010" cy="88" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1010" y="92.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Фильтровать объекты</text>
+<ellipse cx="1010" cy="168" rx="78" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1010" y="172.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть детали объекта</text>
+<ellipse cx="1200" cy="88" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1200" y="92.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть объекты на карте</text>
+<ellipse cx="1200" cy="168" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1200" y="172.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Конвертировать валюту</text>
+<ellipse cx="305" cy="355" rx="75" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="305" y="359.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть свои объекты</text>
+<ellipse cx="480" cy="325" rx="56" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="480" y="329.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Добавить объект</text>
+<ellipse cx="480" cy="410" rx="72" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="480" y="414.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Заполнить данные объекта</text>
+<ellipse cx="635" cy="325" rx="67" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="635" y="329.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Редактировать объект</text>
+<ellipse cx="635" cy="410" rx="56" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="635" y="414.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Удалить объект</text>
+<ellipse cx="305" cy="476" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="305" y="480.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Геокодировать адреса</text>
+<ellipse cx="855" cy="342" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="855" y="346.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть список арендаторов</text>
+<ellipse cx="1055" cy="342" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1055" y="346.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Добавить арендатора</text>
+<ellipse cx="1240" cy="328" rx="90" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1240" y="332.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Начать переписку с арендодателем</text>
+<ellipse cx="1445" cy="310" rx="70" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1445" y="314.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть переписки</text>
+<ellipse cx="1645" cy="310" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1645" y="314.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Отправить сообщение</text>
+<ellipse cx="1445" cy="418" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1445" y="422.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Создать договор из переписки</text>
+<ellipse cx="1645" cy="418" rx="60" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1645" y="422.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Закрыть переписку</text>
+<ellipse cx="315" cy="690" rx="80" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="315" y="694.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Создать договор аренды</text>
+<ellipse cx="490" cy="655" rx="80" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="490" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Выбрать объект недвижимости</text>
+<ellipse cx="490" cy="745" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="490" y="749.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Выбрать арендатора</text>
+<ellipse cx="680" cy="655" rx="67" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="680" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть договоры</text>
+<ellipse cx="680" cy="745" rx="72" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="680" y="749.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Изменить статус договора</text>
+<ellipse cx="865" cy="655" rx="77" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="865" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Добавить паспортные данные</text>
+<ellipse cx="865" cy="745" rx="68" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="865" y="749.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Скачать договор (PDF)</text>
+<ellipse cx="1100" cy="655" rx="80" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1100" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть график платежей</text>
+<ellipse cx="1290" cy="655" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1290" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть историю платежей</text>
+<ellipse cx="1470" cy="655" rx="58" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1470" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Оплатить платёж</text>
+<ellipse cx="1660" cy="655" rx="88" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1660" y="659.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Показать предупреждение о просрочке</text>
+<ellipse cx="1290" cy="745" rx="80" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1290" y="749.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Обновить просроченные платежи</text>
+<ellipse cx="305" cy="995" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="305" y="999.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть дашборд</text>
+<ellipse cx="495" cy="970" rx="88" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="495" y="974.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть финансовую статистику</text>
+<ellipse cx="495" cy="1065" rx="60" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="495" y="1069.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Отчёт о доходах</text>
+<ellipse cx="672" cy="995" rx="65" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="672" y="999.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Предстоящие платежи</text>
+<ellipse cx="840" cy="985" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="840" y="989.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть всех пользователей</text>
+<ellipse cx="1030" cy="960" rx="74" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1030" y="964.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Изменить роль пользователя</text>
+<ellipse cx="1030" cy="1065" rx="74" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1030" y="1062.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Заблокировать /</text>
+<text x="1030" y="1076.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Активировать пользователя</text>
+<ellipse cx="1240" cy="985" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1240" y="989.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Просмотреть статистику системы</text>
+<ellipse cx="1380" cy="985" rx="68" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1380" y="989.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Обновить курсы валют</text>
+<ellipse cx="1545" cy="985" rx="78" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1545" y="982.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Автоматическое</text>
+<text x="1545" y="996.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">начисление платежей</text>
+<ellipse cx="1730" cy="985" rx="82" ry="20" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+<text x="1730" y="982.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">Обновление статуса</text>
+<text x="1730" y="996.0" font-size="10" text-anchor="middle" font-weight="normal" fill="#000000">просроченных платежей</text>
+<ellipse cx="95" cy="83" rx="13" ry="13" fill="#F5F5F5" stroke="#000000" stroke-width="1"/>
+<line x1="95" y1="96" x2="95" y2="129" stroke="#000000" stroke-width="1.5"/>
+<line x1="73" y1="103" x2="117" y2="103" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="129" x2="77" y2="153" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="129" x2="113" y2="153" stroke="#000000" stroke-width="1.5"/>
+<text x="95" y="169" font-size="12" text-anchor="middle" font-weight="bold" fill="#000000">Гость</text>
+<ellipse cx="95" cy="448" rx="13" ry="13" fill="#F5F5F5" stroke="#000000" stroke-width="1"/>
+<line x1="95" y1="461" x2="95" y2="494" stroke="#000000" stroke-width="1.5"/>
+<line x1="73" y1="468" x2="117" y2="468" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="494" x2="77" y2="518" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="494" x2="113" y2="518" stroke="#000000" stroke-width="1.5"/>
+<text x="95" y="534" font-size="12" text-anchor="middle" font-weight="bold" fill="#000000">Арендатор</text>
+<ellipse cx="95" cy="828" rx="13" ry="13" fill="#F5F5F5" stroke="#000000" stroke-width="1"/>
+<line x1="95" y1="841" x2="95" y2="874" stroke="#000000" stroke-width="1.5"/>
+<line x1="73" y1="848" x2="117" y2="848" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="874" x2="77" y2="898" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="874" x2="113" y2="898" stroke="#000000" stroke-width="1.5"/>
+<text x="95" y="914" font-size="12" text-anchor="middle" font-weight="bold" fill="#000000">Арендодатель</text>
+<ellipse cx="95" cy="1038" rx="13" ry="13" fill="#F5F5F5" stroke="#000000" stroke-width="1"/>
+<line x1="95" y1="1051" x2="95" y2="1084" stroke="#000000" stroke-width="1.5"/>
+<line x1="73" y1="1058" x2="117" y2="1058" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="1084" x2="77" y2="1108" stroke="#000000" stroke-width="1.5"/>
+<line x1="95" y1="1084" x2="113" y2="1108" stroke="#000000" stroke-width="1.5"/>
+<text x="95" y="1124" font-size="12" text-anchor="middle" font-weight="bold" fill="#000000">Администратор</text>
+<ellipse cx="1980" cy="908" rx="13" ry="13" fill="#F5F5F5" stroke="#000000" stroke-width="1"/>
+<line x1="1980" y1="921" x2="1980" y2="954" stroke="#000000" stroke-width="1.5"/>
+<line x1="1958" y1="928" x2="2002" y2="928" stroke="#000000" stroke-width="1.5"/>
+<line x1="1980" y1="954" x2="1962" y2="978" stroke="#000000" stroke-width="1.5"/>
+<line x1="1980" y1="954" x2="1998" y2="978" stroke="#000000" stroke-width="1.5"/>
+<text x="1980" y="994" font-size="12" text-anchor="middle" font-weight="bold" fill="#000000">Система</text>
+<line x1="128.0" y1="126.1" x2="255.6" y2="130.5" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.9" y1="122.8" x2="439.1" y2="102.4" stroke="#888888" stroke-width="1.1"/>
+<line x1="128.0" y1="124.8" x2="801.0" y2="120.3" stroke="#888888" stroke-width="1.1"/>
+<line x1="128.0" y1="126.3" x2="1161.0" y2="166.5" stroke="#888888" stroke-width="1.1"/>
+<line x1="124.6" y1="475.3" x2="805.1" y2="137.3" stroke="#888888" stroke-width="1.1"/>
+<line x1="125.2" y1="476.7" x2="974.3" y2="103.7" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.1" y1="479.0" x2="965.9" y2="183.5" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.0" y1="478.7" x2="1153.8" y2="104.8" stroke="#888888" stroke-width="1.1"/>
+<line x1="122.8" y1="472.2" x2="623.7" y2="152.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="107.7" y1="520.5" x2="290.0" y2="959.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.8" y1="499.0" x2="641.3" y2="644.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.3" y1="500.4" x2="826.3" y2="732.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.6" y1="495.3" x2="1052.6" y2="647.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.7" y1="494.5" x2="1241.3" y2="648.3" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.8" y1="493.9" x2="1435.4" y2="650.9" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.7" y1="485.4" x2="1186.5" y2="335.6" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.7" y1="485.6" x2="1403.4" y2="315.6" stroke="#888888" stroke-width="1.1"/>
+<line x1="114.9" y1="843.7" x2="632.5" y2="161.6" stroke="#888888" stroke-width="1.1"/>
+<line x1="107.5" y1="839.4" x2="288.0" y2="396.7" stroke="#888888" stroke-width="1.1"/>
+<line x1="114.0" y1="843.0" x2="460.6" y2="352.4" stroke="#888888" stroke-width="1.1"/>
+<line x1="118.2" y1="846.6" x2="606.7" y2="353.6" stroke="#888888" stroke-width="1.1"/>
+<line x1="120.1" y1="848.6" x2="609.4" y2="431.8" stroke="#888888" stroke-width="1.1"/>
+<line x1="122.1" y1="851.2" x2="814.6" y2="370.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="123.9" y1="854.1" x2="1020.8" y2="360.8" stroke="#888888" stroke-width="1.1"/>
+<line x1="120.5" y1="849.1" x2="277.9" y2="720.4" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.3" y1="863.1" x2="637.8" y2="754.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.8" y1="861.1" x2="820.5" y2="667.4" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.6" y1="864.7" x2="824.7" y2="751.5" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.5" y1="864.2" x2="1241.6" y2="663.7" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.8" y1="866.6" x2="1242.3" y2="750.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.0" y1="878.0" x2="443.8" y2="957.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.3" y1="877.0" x2="633.9" y2="986.7" stroke="#888888" stroke-width="1.1"/>
+<line x1="125.5" y1="857.4" x2="1406.2" y2="326.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.3" y1="859.5" x2="1398.3" y2="433.6" stroke="#888888" stroke-width="1.1"/>
+<line x1="126.7" y1="860.8" x2="1610.4" y2="428.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="123.4" y1="886.9" x2="271.5" y2="975.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="111.8" y1="1051.6" x2="636.1" y2="164.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.7" y1="1075.8" x2="791.2" y2="991.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.9" y1="1077.3" x2="1191.0" y2="989.1" stroke="#888888" stroke-width="1.1"/>
+<line x1="127.9" y1="1077.6" x2="1339.3" y2="988.0" stroke="#888888" stroke-width="1.1"/>
+<line x1="105.8" y1="1048.8" x2="292.2" y2="512.8" stroke="#888888" stroke-width="1.1"/>
+<line x1="1947.1" y1="952.6" x2="1591.6" y2="981.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="1947.3" y1="954.6" x2="1778.7" y2="978.2" stroke="#888888" stroke-width="1.1"/>
+<line x1="1948.4" y1="940.6" x2="1336.0" y2="758.7" stroke="#888888" stroke-width="1.1"/>
+<line x1="475.0" y1="135.1" x2="475.0" y2="106.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="439.1" y="110.55" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="475.0" y="121.55" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="897.5" y1="109.2" x2="952.5" y2="98.8" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="892.0" y="94.0" width="66.0" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="925.0" y="105.0" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;extend&gt;&gt;</text>
+<line x1="896.3" y1="135.9" x2="942.4" y2="148.9" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="886.3701133263212" y="132.41038493919655" width="66.0" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="919.3701133263212" y="143.41038493919655" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;extend&gt;&gt;</text>
+<line x1="898.3" y1="114.8" x2="1126.5" y2="94.5" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="979.3800442987009" y="94.67732939567102" width="66.0" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="1012.3800442987009" y="105.67732939567102" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;extend&gt;&gt;</text>
+<line x1="480.0" y1="363.2" x2="480.0" y2="345.2" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="444.1" y="344.225" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="480.0" y="355.225" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="385.6" y1="675.9" x2="419.4" y2="669.1" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="366.6" y="662.5" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="402.5" y="673.5" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="383.7" y1="711.6" x2="434.2" y2="727.5" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="373.0394575890835" y="709.5238295279976" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="408.9394575890835" y="720.5238295279976" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1373.4" y1="435.8" x2="559.9" y2="637.7" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="930.7264964234208" y="526.7167752331407" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="966.6264964234208" y="537.7167752331407" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1375.2" y1="441.9" x2="545.3" y2="726.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="924.3625176524199" y="573.9781745839358" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="960.2625176524199" y="584.9781745839358" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1522.2" y1="655.0" x2="1580.8" y2="655.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="1518.5" y="645.0" width="66.0" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="1551.5" y="656.0" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;extend&gt;&gt;</text>
+<line x1="1028.0" y1="655.0" x2="740.3" y2="655.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="848.25" y="645.0" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="884.15" y="656.0" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1508.0" y1="310.0" x2="1586.5" y2="310.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="1511.35" y="300.0" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="1547.25" y="311.0" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="495.0" y1="1012.8" x2="495.0" y2="1011.0" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="459.1" y="1001.875" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="495.0" y="1012.875" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="573.4" y1="981.1" x2="614.1" y2="986.8" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="557.8482804290535" y="973.947497235742" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="593.7482804290535" y="984.947497235742" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="913.2" y1="975.4" x2="964.0" y2="968.7" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="902.6692354639532" y="962.030363754743" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="938.5692354639532" y="973.030363754743" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="908.0" y1="1013.6" x2="968.6" y2="1039.2" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="902.417887350497" y="1016.3970052002094" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="938.317887350497" y="1027.3970052002094" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1493.9" y1="936.9" x2="1342.4" y2="794.3" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="1382.2553799934235" y="855.6168282291045" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="1418.1553799934236" y="866.6168282291045" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="1665.2" y1="949.7" x2="1353.2" y2="779.5" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="1473.309893984377" y="854.5690330823875" width="71.8" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="1509.209893984377" y="865.5690330823875" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;include&gt;&gt;</text>
+<line x1="734.2" y1="681.4" x2="810.0" y2="718.2" stroke="#444444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#open_arr)"/>
+<rect x="739.0953442100645" y="689.8031404265178" width="66.0" height="14" rx="2" fill="#FFFDE7" stroke="#CCBB66" stroke-width="0.5"/>
+<text x="772.0953442100645" y="700.8031404265178" font-size="9" text-anchor="middle" font-weight="normal" fill="#555555">&lt;&lt;extend&gt;&gt;</text>
+<line x1="95.0" y1="190.0" x2="95.0" y2="413.0" stroke="#000000" stroke-width="1.5" marker-end="url(#tri_arr)"/>
+<line x1="95.0" y1="555.0" x2="95.0" y2="793.0" stroke="#000000" stroke-width="1.5" marker-end="url(#tri_arr)"/>
+<line x1="95.0" y1="935.0" x2="95.0" y2="1003.0" stroke="#000000" stroke-width="1.5" marker-end="url(#tri_arr)"/>
+</svg>

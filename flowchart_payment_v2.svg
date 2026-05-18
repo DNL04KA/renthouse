@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="1490" viewBox="0 0 820 1490">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Background & border -->
+  <rect x="0" y="0" width="820" height="1490" fill="white"/>
+  <rect x="6" y="6" width="808" height="1478" fill="white" stroke="black" stroke-width="1.5"/>
+
+  <!-- ══════════════════════════════════════════════════
+       MAIN COLUMN  cx = 290
+  ══════════════════════════════════════════════════ -->
+
+  <!-- Начало -->
+  <ellipse cx="290" cy="38" rx="72" ry="24" fill="white" stroke="black" stroke-width="2"/>
+  <text x="290" y="44" font-family="Times New Roman,serif" font-size="15" font-style="italic"
+        text-anchor="middle">Начало</text>
+
+  <line x1="290" y1="62" x2="290" y2="79" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box1: Выбрать оплатить аренду по договору -->
+  <rect x="175" y="79" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="101" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Выбрать оплатить аренду</text>
+  <text x="290" y="120" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">по договору</text>
+
+  <line x1="290" y1="135" x2="290" y2="152" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box2: Выбрать договор аренды из списка -->
+  <rect x="175" y="152" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="174" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Выбрать договор аренды</text>
+  <text x="290" y="193" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">из списка</text>
+
+  <line x1="290" y1="208" x2="290" y2="225" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond1: Договор найден?  cy=265  half-w=115  half-h=40 -->
+  <polygon points="290,225 405,265 290,305 175,265" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="260" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Договор</text>
+  <text x="290" y="276" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">найден?</text>
+
+  <!-- Нет → right -->
+  <line x1="405" y1="265" x2="440" y2="265" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="258" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Нет</text>
+
+  <!-- Да → down -->
+  <line x1="290" y1="305" x2="290" y2="325" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="300" y="320" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="start">Да</text>
+
+  <!-- RIGHT 1: «Договор не найдён»  cy=265 -->
+  <rect x="440" y="243" width="210" height="44" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="545" y="261" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Сообщение об ошибке</text>
+  <text x="545" y="279" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">«Договор не найдён»</text>
+
+  <!-- Box3: Показать информацию -->
+  <rect x="175" y="325" width="230" height="68" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="347" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Показать информацию</text>
+  <text x="290" y="364" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">о начислениях</text>
+  <text x="290" y="381" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">и задолженностях</text>
+
+  <line x1="290" y1="393" x2="290" y2="410" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box4: Выбрать оплачиваемые периоды -->
+  <rect x="175" y="410" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="432" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Выбрать оплачиваемые</text>
+  <text x="290" y="451" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">периоды (месяца)</text>
+
+  <line x1="290" y1="466" x2="290" y2="483" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box5: Ввести сумму платежа -->
+  <rect x="175" y="483" width="230" height="50" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="513" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Ввести сумму платежа</text>
+
+  <line x1="290" y1="533" x2="290" y2="550" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond2: Сумма корректна?  cy=590  half-w=115  half-h=40 -->
+  <polygon points="290,550 405,590 290,630 175,590" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="585" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Сумма</text>
+  <text x="290" y="601" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">корректна?</text>
+
+  <!-- Нет → right -->
+  <line x1="405" y1="590" x2="440" y2="590" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="583" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Нет</text>
+
+  <!-- Да → down -->
+  <line x1="290" y1="630" x2="290" y2="650" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="300" y="645" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="start">Да</text>
+
+  <!-- RIGHT 2a: Ошибка по сумме  cy=590 -->
+  <rect x="440" y="568" width="210" height="44" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="545" y="586" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Сообщение об ошибке</text>
+  <text x="545" y="604" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">по сумме</text>
+
+  <!-- Arrow: ошибка → повторный ввод -->
+  <line x1="545" y1="612" x2="545" y2="622" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- RIGHT 2b: Повторный ввод суммы -->
+  <rect x="440" y="622" width="210" height="44" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="545" y="649" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Повторный ввод суммы</text>
+
+  <!-- Петля возврата к Box5 (правый край x=405, центр y=508) -->
+  <line x1="650" y1="644" x2="682" y2="644" stroke="black" stroke-width="1.5"/>
+  <line x1="682" y1="644" x2="682" y2="508" stroke="black" stroke-width="1.5"/>
+  <line x1="682" y1="508" x2="405" y2="508" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box6: Распределить сумму -->
+  <rect x="175" y="650" width="230" height="68" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="671" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Распределить сумму</text>
+  <text x="290" y="688" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">по выбранным периодам</text>
+  <text x="290" y="705" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">(долги, текущие, авансы)</text>
+
+  <line x1="290" y1="718" x2="290" y2="735" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box7: Показать результат распределения -->
+  <rect x="175" y="735" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="757" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Показать результат</text>
+  <text x="290" y="776" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">распределения</text>
+
+  <line x1="290" y1="791" x2="290" y2="808" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond3: Платёж подтвердить?  cy=848  half-w=115  half-h=40 -->
+  <polygon points="290,808 405,848 290,888 175,848" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="843" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Платёж</text>
+  <text x="290" y="859" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">подтвердить?</text>
+
+  <!-- Нет → right -->
+  <line x1="405" y1="848" x2="440" y2="848" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="841" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Нет</text>
+
+  <!-- Да → down -->
+  <line x1="290" y1="888" x2="290" y2="908" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="300" y="903" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="start">Да</text>
+
+  <!-- RIGHT 3: Отмена операции  cy=848 -->
+  <rect x="440" y="827" width="210" height="42" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="545" y="853" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Отмена операции</text>
+
+  <!-- Box8: Отправить платёж через платёжный сервис -->
+  <rect x="175" y="908" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="930" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Отправить платёж</text>
+  <text x="290" y="949" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">через платёжный сервис</text>
+
+  <line x1="290" y1="964" x2="290" y2="981" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond4: Платёж принят сервисом?  cy=1021  half-w=115  half-h=40 -->
+  <polygon points="290,981 405,1021 290,1061 175,1021" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="1016" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Платёж принят</text>
+  <text x="290" y="1032" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">сервисом?</text>
+
+  <!-- Нет → right -->
+  <line x1="405" y1="1021" x2="440" y2="1021" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="1014" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Нет</text>
+
+  <!-- Да → down -->
+  <line x1="290" y1="1061" x2="290" y2="1081" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="300" y="1076" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="start">Да</text>
+
+  <!-- RIGHT 4: Ошибка платёжного сервиса  cy=1021 -->
+  <rect x="440" y="999" width="210" height="44" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="545" y="1017" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">Сообщение об ошибке</text>
+  <text x="545" y="1035" font-family="Times New Roman,serif" font-size="12" font-style="italic" text-anchor="middle">платёжного сервиса</text>
+
+  <!-- Box9: Записать платёж в базу данных -->
+  <rect x="175" y="1081" width="230" height="68" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="1102" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Записать платёж в базу</text>
+  <text x="290" y="1119" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">данных начислений</text>
+  <text x="290" y="1136" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">и задолженностей</text>
+
+  <line x1="290" y1="1149" x2="290" y2="1166" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box10: Обновить статус начислений и задолженностей -->
+  <rect x="175" y="1166" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="1188" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Обновить статус</text>
+  <text x="290" y="1207" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">начислений и задолженностей</text>
+
+  <line x1="290" y1="1222" x2="290" y2="1239" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box11: Сформировать чек/квитанцию -->
+  <rect x="175" y="1239" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="1261" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Сформировать</text>
+  <text x="290" y="1280" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">чек/квитанцию</text>
+
+  <line x1="290" y1="1295" x2="290" y2="1312" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box12: Отобразить сообщение об успешной оплате -->
+  <rect x="175" y="1312" width="230" height="56" rx="5" fill="white" stroke="black" stroke-width="1.5"/>
+  <text x="290" y="1334" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">Отобразить сообщение</text>
+  <text x="290" y="1353" font-family="Times New Roman,serif" font-size="13" font-style="italic" text-anchor="middle">об успешной оплате</text>
+
+  <line x1="290" y1="1368" x2="290" y2="1388" stroke="black" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Конец -->
+  <ellipse cx="290" cy="1412" rx="72" ry="24" fill="white" stroke="black" stroke-width="2"/>
+  <text x="290" y="1418" font-family="Times New Roman,serif" font-size="15" font-style="italic"
+        text-anchor="middle">Конец</text>
+
+</svg>

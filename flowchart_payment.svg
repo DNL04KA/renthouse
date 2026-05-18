@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="1490" viewBox="0 0 820 1490">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="820" height="1490" fill="white"/>
+  <!-- Outer border -->
+  <rect x="6" y="6" width="808" height="1478" rx="4" fill="white" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- TITLE -->
+  <text x="410" y="38" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="bold"
+        text-anchor="middle" fill="#000000">Блок-схема: Оплата аренды по договору</text>
+  <line x1="40" y1="48" x2="780" y2="48" stroke="#000000" stroke-width="1"/>
+
+  <!-- MAIN COLUMN  cx = 290 -->
+
+  <!-- Начало -->
+  <ellipse cx="290" cy="85" rx="72" ry="24" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="92" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold"
+        text-anchor="middle" fill="#000000">Начало</text>
+
+  <line x1="290" y1="109" x2="290" y2="126" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box1 -->
+  <rect x="175" y="126" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="149" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Выбрать оплатить аренду</text>
+  <text x="290" y="168" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">по договору</text>
+
+  <line x1="290" y1="182" x2="290" y2="199" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box2 -->
+  <rect x="175" y="199" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="222" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Выбрать договор аренды</text>
+  <text x="290" y="241" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">из списка</text>
+
+  <line x1="290" y1="255" x2="290" y2="272" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond1: Договор найден? -->
+  <polygon points="290,272 405,312 290,352 175,312" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="306" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Договор</text>
+  <text x="290" y="323" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">найден?</text>
+
+  <line x1="405" y1="312" x2="440" y2="312" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="306" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Нет</text>
+
+  <line x1="290" y1="352" x2="290" y2="372" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="366" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Да</text>
+
+  <!-- RIGHT 1 -->
+  <rect x="440" y="290" width="210" height="44" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="308" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Сообщение об ошибке</text>
+  <text x="545" y="326" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">«Договор не найдён»</text>
+
+  <!-- Box3 -->
+  <rect x="175" y="372" width="230" height="68" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="394" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Показать информацию</text>
+  <text x="290" y="411" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">о начислениях</text>
+  <text x="290" y="428" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">и задолженностях</text>
+
+  <line x1="290" y1="440" x2="290" y2="457" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box4 -->
+  <rect x="175" y="457" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="480" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Выбрать оплачиваемые</text>
+  <text x="290" y="499" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">периоды (месяца)</text>
+
+  <line x1="290" y1="513" x2="290" y2="530" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box5 -->
+  <rect x="175" y="530" width="230" height="50" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="561" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Ввести сумму платежа</text>
+
+  <line x1="290" y1="580" x2="290" y2="597" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond2: Сумма корректна? -->
+  <polygon points="290,597 405,637 290,677 175,637" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="631" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Сумма</text>
+  <text x="290" y="648" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">корректна?</text>
+
+  <line x1="405" y1="637" x2="440" y2="637" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="631" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Нет</text>
+
+  <line x1="290" y1="677" x2="290" y2="697" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="691" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Да</text>
+
+  <!-- RIGHT 2a -->
+  <rect x="440" y="615" width="210" height="44" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="633" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Сообщение об ошибке</text>
+  <text x="545" y="651" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">по сумме</text>
+
+  <line x1="545" y1="659" x2="545" y2="667" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- RIGHT 2b -->
+  <rect x="440" y="667" width="210" height="44" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="694" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Повторный ввод суммы</text>
+
+  <!-- Loop back -->
+  <line x1="650" y1="689" x2="680" y2="689" stroke="#000000" stroke-width="1.5"/>
+  <line x1="680" y1="689" x2="680" y2="555" stroke="#000000" stroke-width="1.5"/>
+  <line x1="680" y1="555" x2="405" y2="555" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box6 -->
+  <rect x="175" y="697" width="230" height="68" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="719" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Распределить сумму</text>
+  <text x="290" y="736" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">по выбранным периодам</text>
+  <text x="290" y="753" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">(долги, текущие, авансы)</text>
+
+  <line x1="290" y1="765" x2="290" y2="782" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box7 -->
+  <rect x="175" y="782" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="805" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Показать результат</text>
+  <text x="290" y="823" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">распределения</text>
+
+  <line x1="290" y1="838" x2="290" y2="855" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond3: Платёж подтвердить? -->
+  <polygon points="290,855 405,895 290,935 175,895" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="889" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Платёж</text>
+  <text x="290" y="906" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">подтвердить?</text>
+
+  <line x1="405" y1="895" x2="440" y2="895" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="889" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Нет</text>
+
+  <line x1="290" y1="935" x2="290" y2="955" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="949" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Да</text>
+
+  <!-- RIGHT 3 -->
+  <rect x="440" y="874" width="210" height="42" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="900" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Отмена операции</text>
+
+  <!-- Box8 -->
+  <rect x="175" y="955" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="978" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Отправить платёж</text>
+  <text x="290" y="997" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">через платёжный сервис</text>
+
+  <line x1="290" y1="1011" x2="290" y2="1028" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond4: Платёж принят сервисом? -->
+  <polygon points="290,1028 405,1068 290,1108 175,1068" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1062" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Платёж принят</text>
+  <text x="290" y="1079" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">сервисом?</text>
+
+  <line x1="405" y1="1068" x2="440" y2="1068" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="422" y="1062" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Нет</text>
+
+  <line x1="290" y1="1108" x2="290" y2="1128" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="1122" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Да</text>
+
+  <!-- RIGHT 4 -->
+  <rect x="440" y="1046" width="210" height="44" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="545" y="1064" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">Сообщение об ошибке</text>
+  <text x="545" y="1082" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">платёжного сервиса</text>
+
+  <!-- Box9 -->
+  <rect x="175" y="1128" width="230" height="68" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1150" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Записать платёж в базу</text>
+  <text x="290" y="1167" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">данных начислений</text>
+  <text x="290" y="1184" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">и задолженностей</text>
+
+  <line x1="290" y1="1196" x2="290" y2="1213" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box10 -->
+  <rect x="175" y="1213" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1236" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Обновить статус</text>
+  <text x="290" y="1254" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#000000">начислений и задолженностей</text>
+
+  <line x1="290" y1="1269" x2="290" y2="1286" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box11 -->
+  <rect x="175" y="1286" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1309" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Сформировать</text>
+  <text x="290" y="1327" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">чек/квитанцию</text>
+
+  <line x1="290" y1="1342" x2="290" y2="1359" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box12 -->
+  <rect x="175" y="1359" width="230" height="56" rx="0" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1382" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">Отобразить сообщение</text>
+  <text x="290" y="1400" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#000000">об успешной оплате</text>
+
+  <line x1="290" y1="1415" x2="290" y2="1435" stroke="#000000" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Конец -->
+  <ellipse cx="290" cy="1460" rx="72" ry="24" fill="white" stroke="#000000" stroke-width="1.5"/>
+  <text x="290" y="1467" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold"
+        text-anchor="middle" fill="#000000">Конец</text>
+
+</svg>

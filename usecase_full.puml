@@ -1,0 +1,213 @@
+@startuml usecase_full
+!pragma layout smetana
+skinparam usecase {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+}
+skinparam actor {
+  BackgroundColor White
+  BorderColor Black
+}
+skinparam packageStyle rectangle
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam shadowing false
+
+left to right direction
+
+' ─────────────────────────────────────────
+'  ACTORS
+' ─────────────────────────────────────────
+actor "Гость" as Guest
+actor "Арендатор" as Tenant
+actor "Арендодатель" as Landlord
+actor "Администратор" as Admin
+actor "Система" as System
+
+' Inheritance chain
+Guest <|-- Tenant
+Tenant <|-- Landlord
+Landlord <|-- Admin
+
+' ─────────────────────────────────────────
+'  SUBJECT BOUNDARY
+' ─────────────────────────────────────────
+rectangle "АСУ Аренды Недвижимости" {
+
+  ' ============================================================
+  '  БЛОК: Аутентификация
+  ' ============================================================
+  package "Аутентификация" {
+    usecase "Зарегистрироваться" as UC_Register
+    usecase "Войти в систему" as UC_Login
+    usecase "Проверить\nучётные данные" as UC_VerifyCreds
+    usecase "Выйти из системы" as UC_Logout
+    usecase "Просмотреть\nсвой профиль" as UC_ViewProfile
+  }
+
+  ' ============================================================
+  '  БЛОК: Публичный каталог
+  ' ============================================================
+  package "Публичный каталог" {
+    usecase "Просмотреть\nкаталог объектов" as UC_PublicCatalog
+    usecase "Фильтровать объекты\n(тип, цена, город)" as UC_FilterProps
+    usecase "Просмотреть детали\nобъекта" as UC_ViewPropDetails
+    usecase "Просмотреть объекты\nна карте" as UC_ViewMap
+    usecase "Конвертировать\nвалюту" as UC_ConvertCurrency
+  }
+
+  ' ============================================================
+  '  БЛОК: Управление объектами
+  ' ============================================================
+  package "Управление объектами" {
+    usecase "Просмотреть\nсвои объекты" as UC_ViewMyProps
+    usecase "Добавить объект" as UC_AddProp
+    usecase "Заполнить данные\nобъекта" as UC_FillPropData
+    usecase "Редактировать объект" as UC_EditProp
+    usecase "Удалить объект" as UC_DeleteProp
+    usecase "Геокодировать адрес\nобъекта" as UC_GeocodeProps
+  }
+
+  ' ============================================================
+  '  БЛОК: Управление арендаторами
+  ' ============================================================
+  package "Управление арендаторами" {
+    usecase "Просмотреть\nсписок арендаторов" as UC_ViewTenants
+    usecase "Добавить арендатора" as UC_AddTenant
+  }
+
+  ' ============================================================
+  '  БЛОК: Договоры аренды
+  ' ============================================================
+  package "Договоры аренды" {
+    usecase "Создать договор\nаренды" as UC_CreateContract
+    usecase "Выбрать объект\nнедвижимости" as UC_SelectProp
+    usecase "Выбрать арендатора" as UC_SelectTenant
+    usecase "Просмотреть\nдоговоры" as UC_ViewContracts
+    usecase "Изменить статус\nдоговора" as UC_UpdateContractStatus
+    usecase "Добавить паспортные\nданные к договору" as UC_AddPassport
+    usecase "Скачать договор\n(PDF)" as UC_DownloadContract
+  }
+
+  ' ============================================================
+  '  БЛОК: Платежи
+  ' ============================================================
+  package "Платежи" {
+    usecase "Просмотреть\nграфик платежей" as UC_ViewPaySchedule
+    usecase "Просмотреть историю\nплатежей" as UC_ViewPayHistory
+    usecase "Оплатить платёж" as UC_Pay
+    usecase "Показать предупреждение\nо просрочке" as UC_OverdueWarning
+    usecase "Обновить статус\nпросроченных платежей" as UC_UpdateOverdue
+    usecase "Автоматическое\nначисление платежей" as UC_AutoPayments
+  }
+
+  ' ============================================================
+  '  БЛОК: Сообщения
+  ' ============================================================
+  package "Сообщения" {
+    usecase "Начать переписку\nс арендодателем" as UC_StartConv
+    usecase "Просмотреть\nпереписки" as UC_ViewConvs
+    usecase "Отправить сообщение" as UC_SendMsg
+    usecase "Создать договор\nиз переписки" as UC_ContractFromConv
+    usecase "Закрыть переписку" as UC_CloseConv
+  }
+
+  ' ============================================================
+  '  БЛОК: Дашборд и отчёты
+  ' ============================================================
+  package "Дашборд и отчёты" {
+    usecase "Просмотреть дашборд" as UC_Dashboard
+    usecase "Просмотреть финансовую\nстатистику" as UC_FinStats
+    usecase "Просмотреть отчёт\nо доходах" as UC_IncomeReport
+    usecase "Просмотреть предстоящие\nплатежи" as UC_UpcomingPayments
+  }
+
+  ' ============================================================
+  '  БЛОК: Администрирование
+  ' ============================================================
+  package "Администрирование" {
+    usecase "Просмотреть всех\nпользователей" as UC_AdminUsers
+    usecase "Изменить роль\nпользователя" as UC_ChangeRole
+    usecase "Активировать/\nзаблокировать пользователя" as UC_ToggleUser
+    usecase "Просмотреть статистику\nсистемы" as UC_SystemStats
+    usecase "Обновить курсы\nвалют" as UC_UpdateRates
+  }
+
+}
+
+' ─────────────────────────────────────────
+'  СВЯЗИ: Гость
+' ─────────────────────────────────────────
+Guest --> UC_Register
+Guest --> UC_Login
+Guest --> UC_PublicCatalog
+Guest --> UC_ConvertCurrency
+
+UC_Login ..> UC_VerifyCreds : <<include>>
+UC_PublicCatalog ..> UC_FilterProps : <<extend>>
+UC_PublicCatalog ..> UC_ViewPropDetails : <<extend>>
+UC_PublicCatalog ..> UC_ViewMap : <<extend>>
+
+' ─────────────────────────────────────────
+'  СВЯЗИ: Арендатор
+' ─────────────────────────────────────────
+Tenant --> UC_Logout
+Tenant --> UC_ViewProfile
+Tenant --> UC_Dashboard
+Tenant --> UC_ViewContracts
+Tenant --> UC_ViewPaySchedule
+Tenant --> UC_ViewPayHistory
+Tenant --> UC_Pay
+Tenant --> UC_StartConv
+Tenant --> UC_ViewConvs
+
+UC_ViewPaySchedule ..> UC_ViewContracts : <<include>>
+UC_Pay ..> UC_OverdueWarning : <<extend>>
+UC_ViewConvs ..> UC_SendMsg : <<include>>
+
+' ─────────────────────────────────────────
+'  СВЯЗИ: Арендодатель
+' ─────────────────────────────────────────
+Landlord --> UC_ViewMyProps
+Landlord --> UC_AddProp
+Landlord --> UC_EditProp
+Landlord --> UC_DeleteProp
+Landlord --> UC_ViewTenants
+Landlord --> UC_AddTenant
+Landlord --> UC_CreateContract
+Landlord --> UC_UpdateContractStatus
+Landlord --> UC_AddPassport
+Landlord --> UC_DownloadContract
+Landlord --> UC_UpdateOverdue
+Landlord --> UC_FinStats
+Landlord --> UC_ContractFromConv
+Landlord --> UC_CloseConv
+
+UC_AddProp ..> UC_FillPropData : <<include>>
+UC_CreateContract ..> UC_SelectProp : <<include>>
+UC_CreateContract ..> UC_SelectTenant : <<include>>
+UC_FinStats ..> UC_IncomeReport : <<include>>
+UC_FinStats ..> UC_UpcomingPayments : <<include>>
+UC_ContractFromConv ..> UC_SelectProp : <<include>>
+UC_ContractFromConv ..> UC_SelectTenant : <<include>>
+
+' ─────────────────────────────────────────
+'  СВЯЗИ: Администратор
+' ─────────────────────────────────────────
+Admin --> UC_AdminUsers
+Admin --> UC_SystemStats
+Admin --> UC_UpdateRates
+Admin --> UC_GeocodeProps
+
+UC_AdminUsers ..> UC_ChangeRole : <<include>>
+UC_AdminUsers ..> UC_ToggleUser : <<include>>
+
+' ─────────────────────────────────────────
+'  СВЯЗИ: Система
+' ─────────────────────────────────────────
+System --> UC_AutoPayments
+System --> UC_UpdateOverdue
+UC_AutoPayments ..> UC_UpdateOverdue : <<include>>
+
+@enduml
