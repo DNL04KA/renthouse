@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, Form, Input, Button, Typography, Row, Col, Avatar, Tag, message, Descriptions, Space, Modal, Statistic } from 'antd';
-import { UserOutlined, EditOutlined, SaveOutlined, CloseOutlined, PhoneOutlined, HomeOutlined, LockOutlined, KeyOutlined, BuildOutlined, FileTextOutlined, DollarOutlined } from '@ant-design/icons';
+import { UserOutlined, EditOutlined, SaveOutlined, CloseOutlined, PhoneOutlined, HomeOutlined, LockOutlined, KeyOutlined, BuildOutlined, FileTextOutlined, DollarOutlined, MailOutlined } from '@ant-design/icons';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '../api/client';
 import dayjs from 'dayjs';
@@ -66,6 +66,7 @@ export function Profile() {
             patronymic: user?.patronymic,
             phone: user?.phone,
             address: user?.address,
+            email: user?.email,
         });
         setEditing(true);
     };
@@ -185,6 +186,7 @@ export function Profile() {
                         </Descriptions.Item>
                         <Descriptions.Item label="Телефон">{user?.phone || '—'}</Descriptions.Item>
                         <Descriptions.Item label="Адрес">{user?.address || '—'}</Descriptions.Item>
+                        <Descriptions.Item label="Email" span={2}>{user?.email || '—'}</Descriptions.Item>
                     </Descriptions>
                 </Card>
             ) : (
@@ -218,6 +220,9 @@ export function Profile() {
                         </Form.Item>
                         <Form.Item name="address" label="Адрес">
                             <Input prefix={<HomeOutlined />} placeholder="г. Минск, ул. Ленина, д. 1" />
+                        </Form.Item>
+                        <Form.Item name="email" label="Email" rules={[{ type: 'email', message: 'Неверный формат email' }]}>
+                            <Input prefix={<MailOutlined />} placeholder="example@mail.com" />
                         </Form.Item>
                         <Form.Item style={{ marginBottom: 0 }}>
                             <Button
