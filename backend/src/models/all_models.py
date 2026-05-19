@@ -28,6 +28,7 @@ class User(AuditableBase):
     birth_date: Mapped[date] = mapped_column(Date, nullable=True)
     phone: Mapped[str] = mapped_column(String, nullable=True)
     address: Mapped[str] = mapped_column(String, nullable=True)
+    email: Mapped[str] = mapped_column(String, nullable=True)
 
 class PropertyType(str, enum.Enum):
     flat = "flat"; office = "office"; warehouse = "warehouse"; other = "other"

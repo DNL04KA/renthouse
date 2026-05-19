@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { Card, Form, Input, Button, Typography, Row, Col, Avatar, Tag, Divider, message, Descriptions, Space, Modal } from 'antd';
-import { UserOutlined, EditOutlined, SaveOutlined, CloseOutlined, PhoneOutlined, HomeOutlined, LockOutlined, KeyOutlined } from '@ant-design/icons';
+import { Card, Form, Input, Button, Typography, Row, Col, Avatar, Tag, Divider, message, Descriptions, Space, Modal, Statistic } from 'antd';
+import { UserOutlined, EditOutlined, SaveOutlined, CloseOutlined, PhoneOutlined, HomeOutlined, LockOutlined, KeyOutlined, BuildOutlined, FileTextOutlined, DollarOutlined } from '@ant-design/icons';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '../api/client';
 import dayjs from 'dayjs';
+import 'dayjs/locale/ru';
+dayjs.locale('ru');
 
 const { Title, Text } = Typography;
 
@@ -70,6 +72,30 @@ export function Profile() {
 
     const fullName = [user?.last_name, user?.first_name, user?.patronymic].filter(Boolean).join(' ') || user?.username;
     const roleInfo = roleLabel[user?.role] ?? { label: user?.role, color: 'default' };
+    const isLandlord = user?.role === 'landlord';
+
+    const { data: properties = [] } = useQuery({
+        queryKey: ['properties'],
+        queryFn: () => apiClient.get('/properties').then(r => r.data),
+        enabled: isLandlord,
+    });
+
+    const { data: contracts = [] } = useQuery({
+        queryKey: ['contracts'],
+        queryFn: () => apiClient.get('/contracts').then(r => r.data),
+        enabled: isLandlord,
+    });
+
+    const monthStart = dayjs().startOf('month').format('YYYY-MM-DD');
+    const monthEnd = dayjs().endOf('month').format('YYYY-MM-DD');
+    const { data: incomeReport } = useQuery({
+        queryKey: ['income-report', monthStart, monthEnd],
+        queryFn: () => apiClient.get(`/reports/income?start_date=${monthStart}&end_date=${monthEnd}`).then(r => r.data),
+        enabled: isLandlord,
+    });
+
+    const activeContracts = (contracts as any[]).filter(c => c.status === 'active').length;
+    const monthIncome = incomeReport?.total_income ?? 0;
 
     if (isLoading) return <div style={{ padding: 32 }}>Загрузка...</div>;
 
@@ -108,6 +134,45 @@ export function Profile() {
                     </Col>
                 </Row>
             </Card>
+
+            {isLandlord && (
+                <Card style={{ borderRadius: 16, marginBottom: 24 }} title="Сводная статистика">
+                    <Row gutter={24}>
+                        <Col span={8}>
+                            <Card style={{ borderRadius: 12, background: '#eff6ff', border: 'none' }} bodyStyle={{ padding: '20px 24px' }}>
+                                <Statistic
+                                    title={<span style={{ color: '#64748b', fontSize: 13 }}>Объектов в управлении</span>}
+                                    value={(properties as any[]).length}
+                                    prefix={<BuildOutlined style={{ color: '#2563eb' }} />}
+                                    valueStyle={{ color: '#2563eb', fontWeight: 700 }}
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8}>
+                            <Card style={{ borderRadius: 12, background: '#f0fdf4', border: 'none' }} bodyStyle={{ padding: '20px 24px' }}>
+                                <Statistic
+                                    title={<span style={{ color: '#64748b', fontSize: 13 }}>Действующих договоров</span>}
+                                    value={activeContracts}
+                                    prefix={<FileTextOutlined style={{ color: '#16a34a' }} />}
+                                    valueStyle={{ color: '#16a34a', fontWeight: 700 }}
+                                />
+                            </Card>
+                        </Col>
+                        <Col span={8}>
+                            <Card style={{ borderRadius: 12, background: '#fffbeb', border: 'none' }} bodyStyle={{ padding: '20px 24px' }}>
+                                <Statistic
+                                    title={<span style={{ color: '#64748b', fontSize: 13 }}>Поступило за {dayjs().format('MMMM')}</span>}
+                                    value={monthIncome}
+                                    prefix={<DollarOutlined style={{ color: '#d97706' }} />}
+                                    suffix="BYN"
+                                    precision={2}
+                                    valueStyle={{ color: '#d97706', fontWeight: 700 }}
+                                />
+                            </Card>
+                        </Col>
+                    </Row>
+                </Card>
+            )}
 
             {!editing ? (
                 <Card style={{ borderRadius: 16 }} title="Личные данные">

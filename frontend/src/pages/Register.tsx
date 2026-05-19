@@ -12,19 +12,43 @@ export function Register() {
     const navigate = useNavigate();
     const [step, setStep] = useState(0);
     const [role, setRole] = useState<string>('tenant');
-    const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
+
+    // Отдельная форма на каждый шаг — нет проблем с валидацией скрытых полей
+    const [form0] = Form.useForm();
+    const [form1] = Form.useForm();
+    const [form2] = Form.useForm();
+
+    // Хранилище значений всех шагов
+    const [values, setValues] = useState<any>({});
+
+    const nextStep = async () => {
+        const form = [form0, form1][step];
+        try {
+            const vals = await form.validateFields();
+            setValues((prev: any) => ({ ...prev, ...vals }));
+            setStep(s => s + 1);
+        } catch {}
+    };
+
+    const prevStep = () => {
+        // Сохраняем текущие значения перед возвратом
+        const form = [form0, form1, form2][step];
+        const curr = form.getFieldsValue();
+        setValues((prev: any) => ({ ...prev, ...curr }));
+        setStep(s => s - 1);
+    };
 
     const onFinish = async (vals: any) => {
         setLoading(true);
         try {
+            const allVals = { ...values, ...vals };
             const payload = {
-                ...vals,
-                birth_date: vals.birth_date ? vals.birth_date.format('YYYY-MM-DD') : undefined,
+                ...allVals,
+                birth_date: allVals.birth_date ? allVals.birth_date.format('YYYY-MM-DD') : undefined,
             };
             await apiClient.post('/auth/register', payload);
 
-            // Auto-login after registration
             const form_data = new URLSearchParams();
             form_data.append('username', vals.username);
             form_data.append('password', vals.password);
@@ -39,19 +63,15 @@ export function Register() {
             const detail = e.response?.data?.detail;
             if (detail === 'User exists') {
                 message.error('Пользователь с таким логином уже существует');
-                setStep(0);
+                setStep(2);
             } else if (status === 422) {
                 const errors = e.response?.data?.detail;
-                if (Array.isArray(errors)) {
-                    const msg = errors.map((err: any) => err.msg).join(', ');
-                    message.error(`Ошибка валидации: ${msg}`);
-                } else {
-                    message.error('Ошибка валидации данных');
-                }
+                const msg = Array.isArray(errors) ? errors.map((err: any) => err.msg).join(', ') : 'Ошибка валидации данных';
+                message.error(msg);
             } else if (status === 500) {
                 message.error('Ошибка сервера. Возможно, такой телефон уже зарегистрирован.');
             } else if (!e.response) {
-                message.error('Нет связи с сервером. Проверьте, запущен ли бэкенд.');
+                message.error('Нет связи с сервером. Убедитесь, что бэкенд запущен.');
             } else {
                 message.error(typeof detail === 'string' ? detail : 'Ошибка регистрации. Проверьте данные.');
             }
@@ -60,12 +80,18 @@ export function Register() {
         }
     };
 
-    const nextStep = () => {
-        const fields = step === 0
-            ? ['last_name', 'first_name', 'birth_date']
-            : ['phone', 'role'];
-        form.validateFields(fields).then(() => setStep(s => s + 1)).catch(() => {});
-    };
+    const navButtons = (isLast = false) => (
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
+            {step > 0
+                ? <Button size="large" onClick={prevStep}>← Назад</Button>
+                : <div />
+            }
+            {isLast
+                ? <Button type="primary" size="large" htmlType="submit" loading={loading} style={{ minWidth: 160 }}>Создать аккаунт</Button>
+                : <Button type="primary" size="large" onClick={nextStep}>Далее →</Button>
+            }
+        </div>
+    );
 
     return (
         <div style={{
@@ -96,10 +122,10 @@ export function Register() {
                         ]}
                     />
 
-                    <Form form={form} layout="vertical" onFinish={onFinish} requiredMark="optional">
-
-                        {/* Step 0: Personal info */}
-                        <div style={{ display: step === 0 ? 'block' : 'none' }}>
+                    {/* Шаг 1: Личные данные */}
+                    {step === 0 && (
+                        <Form form={form0} layout="vertical" requiredMark="optional"
+                            initialValues={values}>
                             <Title level={5} style={{ marginBottom: 20 }}>Личные данные</Title>
                             <Row gutter={16}>
                                 <Col span={12}>
@@ -123,9 +149,8 @@ export function Register() {
                                     { required: true, message: 'Укажите дату рождения' },
                                     {
                                         validator: (_, v) => {
-                                            if (v && dayjs().diff(v, 'year') < 18) {
+                                            if (v && dayjs().diff(v, 'year') < 18)
                                                 return Promise.reject('Вам должно быть не менее 18 лет');
-                                            }
                                             return Promise.resolve();
                                         }
                                     }
@@ -136,13 +161,19 @@ export function Register() {
                                     size="large"
                                     format="DD.MM.YYYY"
                                     placeholder="ДД.ММ.ГГГГ"
+                                    inputReadOnly
                                     disabledDate={d => d && d.isAfter(dayjs().subtract(18, 'year'))}
+                                    defaultPickerValue={dayjs().subtract(18, 'year')}
                                 />
                             </Form.Item>
-                        </div>
+                            {navButtons()}
+                        </Form>
+                    )}
 
-                        {/* Step 1: Contacts */}
-                        <div style={{ display: step === 1 ? 'block' : 'none' }}>
+                    {/* Шаг 2: Контакты */}
+                    {step === 1 && (
+                        <Form form={form1} layout="vertical" requiredMark="optional"
+                            initialValues={values}>
                             <Title level={5} style={{ marginBottom: 20 }}>Контактные данные</Title>
                             <Form.Item
                                 name="phone"
@@ -152,32 +183,15 @@ export function Register() {
                                     { pattern: /^\+?[\d\s\-()]{7,}$/, message: 'Неверный формат телефона' }
                                 ]}
                             >
-                                <Input
-                                    prefix={<PhoneOutlined />}
-                                    placeholder="+375 (29) 123-45-67"
-                                    size="large"
-                                />
+                                <Input prefix={<PhoneOutlined />} placeholder="+375 (29) 123-45-67" size="large" />
                             </Form.Item>
                             <Form.Item name="address" label="Адрес проживания">
-                                <Input
-                                    prefix={<HomeOutlined />}
-                                    placeholder="г. Минск, ул. Ленина, д. 1, кв. 1"
-                                    size="large"
-                                />
+                                <Input prefix={<HomeOutlined />} placeholder="г. Минск, ул. Ленина, д. 1, кв. 1" size="large" />
                             </Form.Item>
-                            <Form.Item
-                                name="role"
-                                label="Роль в системе"
-                                initialValue="tenant"
-                                rules={[{ required: true }]}
-                            >
+                            <Form.Item name="role" label="Роль в системе" initialValue="tenant" rules={[{ required: true }]}>
                                 <Select size="large" onChange={v => setRole(v)}>
-                                    <Option value="tenant">
-                                        <Space><TeamOutlined /> Арендатор — ищу жильё</Space>
-                                    </Option>
-                                    <Option value="landlord">
-                                        <Space><HomeOutlined /> Арендодатель — сдаю недвижимость</Space>
-                                    </Option>
+                                    <Option value="tenant"><Space><TeamOutlined /> Арендатор — ищу жильё</Space></Option>
+                                    <Option value="landlord"><Space><HomeOutlined /> Арендодатель — сдаю недвижимость</Space></Option>
                                 </Select>
                             </Form.Item>
                             <div style={{ background: '#f0f9ff', borderRadius: 12, padding: '12px 16px', marginBottom: 8 }}>
@@ -187,10 +201,14 @@ export function Register() {
                                         : 'Как арендатор вы сможете просматривать объекты, вести переписку с владельцами и получать договоры.'}
                                 </Text>
                             </div>
-                        </div>
+                            {navButtons()}
+                        </Form>
+                    )}
 
-                        {/* Step 2: Account */}
-                        <div style={{ display: step === 2 ? 'block' : 'none' }}>
+                    {/* Шаг 3: Аккаунт */}
+                    {step === 2 && (
+                        <Form form={form2} layout="vertical" onFinish={onFinish} requiredMark="optional"
+                            initialValues={values}>
                             <Title level={5} style={{ marginBottom: 20 }}>Данные для входа</Title>
                             <Form.Item
                                 name="username"
@@ -229,32 +247,14 @@ export function Register() {
                             >
                                 <Input.Password prefix={<LockOutlined />} placeholder="Повторите пароль" size="large" />
                             </Form.Item>
-
                             <div style={{ background: '#f0fdf4', borderRadius: 12, padding: '12px 16px', marginBottom: 16 }}>
                                 <Text type="secondary" style={{ fontSize: 12 }}>
                                     Регистрируясь, вы принимаете условия использования системы. Ваши данные защищены и не передаются третьим лицам.
                                 </Text>
                             </div>
-                        </div>
-
-                        {/* Navigation */}
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
-                            {step > 0 ? (
-                                <Button size="large" onClick={() => setStep(s => s - 1)}>← Назад</Button>
-                            ) : (
-                                <div />
-                            )}
-                            {step < 2 ? (
-                                <Button type="primary" size="large" onClick={nextStep}>
-                                    Далее →
-                                </Button>
-                            ) : (
-                                <Button type="primary" size="large" htmlType="submit" loading={loading} style={{ minWidth: 160 }}>
-                                    Создать аккаунт
-                                </Button>
-                            )}
-                        </div>
-                    </Form>
+                            {navButtons(true)}
+                        </Form>
+                    )}
                 </Card>
 
                 <div style={{ textAlign: 'center', marginTop: 20 }}>

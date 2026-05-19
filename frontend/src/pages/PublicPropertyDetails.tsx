@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Card, Typography, Tag, Spin, Button, Row, Col, Space, Avatar, Modal, Form, Input, message as antMsg, Select } from 'antd';
+import { Card, Typography, Tag, Spin, Button, Row, Col, Space, Avatar, Modal, Form, Input, message as antMsg, Select, Result, Divider } from 'antd';
 import {
     BuildOutlined, EnvironmentOutlined, PhoneOutlined, UserOutlined,
     CheckCircleOutlined, LoginOutlined, HomeOutlined, LockOutlined, MessageOutlined, LeftOutlined,
+    FormOutlined,
 } from '@ant-design/icons';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { publicApiClient, apiClient } from '../api/client';
@@ -31,7 +32,10 @@ export function PublicPropertyDetails() {
     const navigate = useNavigate();
     const [authModalOpen, setAuthModalOpen] = useState(false);
     const [inquiryOpen, setInquiryOpen] = useState(false);
+    const [messageOpen, setMessageOpen] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const [inquiryForm] = Form.useForm();
+    const [messageForm] = Form.useForm();
     const [displayCurrency, setDisplayCurrency] = useState('BYN');
     const [activeImage, setActiveImage] = useState(0);
     const isAuth = !!localStorage.getItem('token');
@@ -43,18 +47,39 @@ export function PublicPropertyDetails() {
     });
 
     const inquiryMutation = useMutation({
-        mutationFn: (vals: any) =>
-            apiClient.post('/conversations', { property_id: id, initial_message: vals.message }),
+        mutationFn: (vals: any) => {
+            const text = `Имя: ${vals.name}\nТелефон: ${vals.phone}\n\nКомментарий: ${vals.comment}`;
+            return apiClient.post('/conversations', { property_id: id, initial_message: text });
+        },
         onSuccess: () => {
             setInquiryOpen(false);
             inquiryForm.resetFields();
-            antMsg.success('Запрос отправлен! Перейдите в раздел «Сообщения» в личном кабинете.');
+            setSubmitted(true);
+        },
+        onError: (e: any) => {
+            const detail = e.response?.data?.detail || '';
+            if (detail.includes('already exists')) {
+                antMsg.warning('У вас уже есть заявка по этому объекту');
+                setInquiryOpen(false);
+            } else {
+                antMsg.error(detail || 'Ошибка отправки');
+            }
+        },
+    });
+
+    const messageMutation = useMutation({
+        mutationFn: (vals: any) =>
+            apiClient.post('/conversations', { property_id: id, initial_message: vals.message }),
+        onSuccess: () => {
+            setMessageOpen(false);
+            messageForm.resetFields();
+            antMsg.success('Сообщение отправлено! Перейдите в раздел «Сообщения».');
         },
         onError: (e: any) => {
             const detail = e.response?.data?.detail || '';
             if (detail.includes('already exists')) {
                 antMsg.warning('У вас уже есть переписка по этому объекту');
-                setInquiryOpen(false);
+                setMessageOpen(false);
             } else {
                 antMsg.error(detail || 'Ошибка отправки');
             }
@@ -268,9 +293,9 @@ export function PublicPropertyDetails() {
                                             block
                                             icon={<MessageOutlined />}
                                             style={{ height: 46, fontSize: '1rem', background: isSale ? '#7c3aed' : undefined, borderColor: isSale ? '#7c3aed' : undefined }}
-                                            onClick={() => setInquiryOpen(true)}
+                                            onClick={() => setMessageOpen(true)}
                                         >
-                                            {isSale ? 'Узнать о покупке' : 'Написать владельцу'}
+                                            Написать владельцу
                                         </Button>
                                         <Button block icon={<PhoneOutlined />} onClick={() => setAuthModalOpen(true)}>
                                             Показать телефон
@@ -311,33 +336,70 @@ export function PublicPropertyDetails() {
             {/* Inquiry modal */}
             <Modal
                 open={inquiryOpen}
-                onCancel={() => setInquiryOpen(false)}
+                onCancel={() => { setInquiryOpen(false); inquiryForm.resetFields(); }}
                 onOk={() => inquiryForm.submit()}
-                okText="Отправить"
-                title={<Space><MessageOutlined /> Написать владельцу</Space>}
+                okText="Отправить заявку"
+                title={<Space><FormOutlined /> Заявка на аренду</Space>}
                 confirmLoading={inquiryMutation.isPending}
+                width={480}
             >
                 <div style={{ background: '#f0f9ff', borderRadius: 12, padding: 12, marginBottom: 16 }}>
                     <Text strong><HomeOutlined /> {prop.city}, {prop.street} {prop.house}</Text>
                     <br />
                     <Text type="secondary" style={{ fontSize: 12 }}>
-                        Владелец: {prop.owner?.name || 'Собственник'} · {displayPrice}
+                        {displayPrice} · {prop.area} м²
                     </Text>
                 </div>
-                <Form
-                    form={inquiryForm}
-                    layout="vertical"
-                    onFinish={vals => inquiryMutation.mutate(vals)}
-                >
+                <Form form={inquiryForm} layout="vertical" onFinish={vals => inquiryMutation.mutate(vals)}>
                     <Form.Item
-                        name="message"
-                        label="Сообщение владельцу"
-                        rules={[{ required: true, message: 'Напишите сообщение' }]}
-                        initialValue="Здравствуйте! Меня интересует данный объект. Подскажите, пожалуйста, актуальна ли аренда?"
+                        name="name"
+                        label="Ваше имя"
+                        rules={[{ required: true, message: 'Введите ваше имя' }]}
                     >
-                        <Input.TextArea rows={4} maxLength={500} showCount />
+                        <Input prefix={<UserOutlined />} placeholder="Иван Иванов" />
+                    </Form.Item>
+                    <Form.Item
+                        name="phone"
+                        label="Контактный телефон"
+                        rules={[
+                            { required: true, message: 'Введите номер телефона' },
+                            { pattern: /^\+?[\d\s\-()]{7,}$/, message: 'Неверный формат' },
+                        ]}
+                    >
+                        <Input prefix={<PhoneOutlined />} placeholder="+375 (29) 123-45-67" />
+                    </Form.Item>
+                    <Form.Item
+                        name="comment"
+                        label="Комментарий / требования"
+                        rules={[{ required: true, message: 'Опишите ваши требования' }]}
+                        initialValue="Здравствуйте! Меня интересует данный объект. Прошу сообщить об актуальности и условиях аренды."
+                    >
+                        <Input.TextArea rows={4} maxLength={500} showCount placeholder="Опишите ваши пожелания..." />
                     </Form.Item>
                 </Form>
+            </Modal>
+
+            {/* Success confirmation modal */}
+            <Modal
+                open={submitted}
+                onCancel={() => setSubmitted(false)}
+                footer={
+                    <Space>
+                        <Button onClick={() => { setSubmitted(false); navigate('/app/messages'); }} type="primary">
+                            Перейти в сообщения
+                        </Button>
+                        <Button onClick={() => setSubmitted(false)}>Закрыть</Button>
+                    </Space>
+                }
+                centered
+                width={420}
+                closable={false}
+            >
+                <Result
+                    status="success"
+                    title="Заявка отправлена!"
+                    subTitle="Арендодатель получил вашу заявку и свяжется с вами в ближайшее время. Вы также можете следить за перепиской в разделе «Сообщения»."
+                />
             </Modal>
 
             {/* Auth / contact modal */}
@@ -378,6 +440,46 @@ export function PublicPropertyDetails() {
                         </Space>
                     </div>
                 )}
+            </Modal>
+
+            {/* Simple message modal */}
+            <Modal
+                open={messageOpen}
+                onCancel={() => { setMessageOpen(false); messageForm.resetFields(); }}
+                onOk={() => messageForm.submit()}
+                okText="Отправить"
+                title={<Space><MessageOutlined /> Написать владельцу</Space>}
+                confirmLoading={messageMutation.isPending}
+            >
+                <div style={{ background: '#f0f9ff', borderRadius: 12, padding: 12, marginBottom: 16 }}>
+                    <Text strong><HomeOutlined /> {prop.city}, {prop.street} {prop.house}</Text>
+                    <br />
+                    <Text type="secondary" style={{ fontSize: 12 }}>
+                        Владелец: {prop.owner?.name || 'Собственник'} · {displayPrice}
+                    </Text>
+                </div>
+                <Form
+                    form={messageForm}
+                    layout="vertical"
+                    onFinish={vals => messageMutation.mutate(vals)}
+                >
+                    <Form.Item
+                        name="message"
+                        label="Сообщение"
+                        rules={[{ required: true, message: 'Напишите сообщение' }]}
+                        initialValue="Здравствуйте! Меня интересует данный объект. Подскажите, пожалуйста, актуальна ли аренда?"
+                    >
+                        <Input.TextArea rows={4} maxLength={500} showCount />
+                    </Form.Item>
+                </Form>
+                <Divider plain style={{ color: '#94a3b8', fontSize: 12 }}>или</Divider>
+                <Button
+                    block
+                    icon={<FormOutlined />}
+                    onClick={() => { setMessageOpen(false); messageForm.resetFields(); setInquiryOpen(true); }}
+                >
+                    Оставить заявку на аренду
+                </Button>
             </Modal>
         </div>
     );
