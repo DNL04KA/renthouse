@@ -36,6 +36,7 @@ class UserResponse(BaseModel):
     birth_date: Optional[date] = None
     phone: Optional[str] = None
     address: Optional[str] = None
+    email: Optional[str] = None
     model_config = ConfigDict(from_attributes=True)
 
 class PropertyCreate(BaseModel):
@@ -95,6 +96,7 @@ class UserSelfUpdate(BaseModel):
     patronymic: Optional[str] = None
     phone: Optional[str] = None
     address: Optional[str] = None
+    email: Optional[str] = None
 
 class PasswordChange(BaseModel):
     current_password: str
