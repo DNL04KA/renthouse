@@ -14,6 +14,13 @@ export function Payments() {
         onSuccess: () => { qc.invalidateQueries({ queryKey: ['payments'] }); qc.invalidateQueries({ queryKey: ['dash_payments'] }); message.success('Оплачено!'); }
     });
 
+    const statusOrder: Record<string, number> = { overdue: 0, pending: 1, paid: 2 };
+    const sorted = data ? [...data].sort((a: any, b: any) => {
+        const byStatus = (statusOrder[a.status] ?? 3) - (statusOrder[b.status] ?? 3);
+        if (byStatus !== 0) return byStatus;
+        return new Date(a.due_date).getTime() - new Date(b.due_date).getTime();
+    }) : [];
+
     const totalPaid = data?.filter((p: any) => p.status === 'paid').reduce((a: number, c: any) => a + Number(c.amount), 0) || 0;
     const totalOverdue = data?.filter((p: any) => p.status === 'overdue').reduce((a: number, c: any) => a + Number(c.amount), 0) || 0;
     const totalPending = data?.filter((p: any) => p.status === 'pending').reduce((a: number, c: any) => a + Number(c.amount), 0) || 0;
@@ -43,7 +50,7 @@ export function Payments() {
             </div>
 
             <Card bordered={false} styles={{ body: { padding: 0 } }} style={{ borderRadius: 16 }}>
-                <Table dataSource={data} rowKey="id" loading={isLoading} columns={[
+                <Table dataSource={sorted} rowKey="id" loading={isLoading} columns={[
                     {
                         title: 'Объект / Договор',
                         key: 'context',

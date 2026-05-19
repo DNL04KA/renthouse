@@ -13,6 +13,14 @@ const { Title, Text, Paragraph } = Typography;
 
 export function Dashboard() {
     const navigate = useNavigate();
+
+    let role = 'tenant';
+    const token = localStorage.getItem('token');
+    if (token) {
+        try { role = JSON.parse(atob(token.split('.')[1])).role; } catch {}
+    }
+    const isLandlord = role === 'landlord' || role === 'admin';
+    const isTenant = role === 'tenant';
     const { data: props } = useQuery({ queryKey: ['dash_props'], queryFn: () => apiClient.get('/properties').then(res => res.data) });
     const { data: contracts } = useQuery({ queryKey: ['dash_contracts'], queryFn: () => apiClient.get('/contracts').then(res => res.data) });
     const { data: payments, isLoading: paymentsLoading } = useQuery({ queryKey: ['dash_payments'], queryFn: () => apiClient.get('/payments').then(res => res.data) });
@@ -108,19 +116,21 @@ export function Dashboard() {
                         )}
                     </Card>
                 </Col>
-                <Col xs={24} sm={12} lg={6}>
-                    <Card bordered={false} styles={{ body: { padding: 24 } }} style={{ borderRadius: 16 }}>
-                        <Statistic
-                            title="Загрузка объектов"
-                            value={occupancyRate}
-                            suffix="%"
-                            prefix={<ProjectOutlined style={{ color: '#2563eb' }} />}
-                        />
-                        <div style={{ marginTop: 12 }}>
-                            <Progress percent={occupancyRate} size="small" strokeColor="#2563eb" />
-                        </div>
-                    </Card>
-                </Col>
+                {isLandlord && (
+                    <Col xs={24} sm={12} lg={6}>
+                        <Card bordered={false} styles={{ body: { padding: 24 } }} style={{ borderRadius: 16 }}>
+                            <Statistic
+                                title="Загрузка объектов"
+                                value={occupancyRate}
+                                suffix="%"
+                                prefix={<ProjectOutlined style={{ color: '#2563eb' }} />}
+                            />
+                            <div style={{ marginTop: 12 }}>
+                                <Progress percent={occupancyRate} size="small" strokeColor="#2563eb" />
+                            </div>
+                        </Card>
+                    </Col>
+                )}
             </Row>
 
             <Row gutter={[24, 24]}>
@@ -149,9 +159,16 @@ export function Dashboard() {
                 <Col xs={24} lg={8}>
                     <Card title="Быстрые действия" style={{ borderRadius: 16 }}>
                         <Space direction="vertical" style={{ width: '100%' }}>
-                            <Button block type="primary" icon={<BuildOutlined />} onClick={() => navigate('/app/properties')}>Добавить объект</Button>
-                            <Button block icon={<UserOutlined />} onClick={() => navigate('/app/tenants')}>Новый арендатор</Button>
-                            <Button block icon={<FileTextOutlined />} onClick={() => navigate('/app/contracts')}>Создать договор</Button>
+                            {isLandlord && <>
+                                <Button block type="primary" icon={<BuildOutlined />} onClick={() => navigate('/app/properties')}>Добавить объект</Button>
+                                <Button block icon={<UserOutlined />} onClick={() => navigate('/app/tenants')}>Новый арендатор</Button>
+                                <Button block icon={<FileTextOutlined />} onClick={() => navigate('/app/contracts')}>Создать договор</Button>
+                            </>}
+                            {isTenant && <>
+                                <Button block type="primary" icon={<BuildOutlined />} onClick={() => navigate('/catalog')}>Найти жильё</Button>
+                                <Button block icon={<FileTextOutlined />} onClick={() => navigate('/app/contracts')}>Мои договоры</Button>
+                                <Button block icon={<DollarOutlined />} onClick={() => navigate('/app/payments')}>Мои платежи</Button>
+                            </>}
                             <AntDivider style={{ margin: '12px 0' }} />
                             <Card size="small" style={{ background: '#f0f9ff', border: 'none' }}>
                                 <Space align="start">
@@ -159,7 +176,10 @@ export function Dashboard() {
                                     <div>
                                         <Text strong>Сводка</Text>
                                         <Paragraph style={{ margin: 0, fontSize: 12 }}>
-                                            Активных договоров: {activeContracts}. Объектов всего: {props?.length || 0}.
+                                            {isLandlord
+                                                ? `Активных договоров: ${activeContracts}. Объектов всего: ${props?.length || 0}.`
+                                                : `Активных договоров: ${activeContracts}. Ожидает оплат: ${pending.toFixed(2)} BYN.`
+                                            }
                                         </Paragraph>
                                     </div>
                                 </Space>

@@ -21,6 +21,7 @@ class UserRegister(BaseModel):
     birth_date: Optional[date] = None
     phone: Optional[str] = None
     address: Optional[str] = None
+    email: Optional[str] = None
 
 class UserResponse(BaseModel):
     id: uuid.UUID
