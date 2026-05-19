@@ -199,7 +199,7 @@ export function DashboardLayout() {
                     </Link>
                     <div style={{ marginTop: 8 }}>
                         <Tag color={role === 'admin' ? 'red' : role === 'landlord' ? 'blue' : 'green'}>
-                            {role === 'admin' ? '👑 Администратор' : role === 'landlord' ? 'Владелец' : 'Арендатор'}
+                            {role === 'admin' ? 'Администратор' : role === 'landlord' ? 'Арендодатель' : 'Арендатор'}
                         </Tag>
                     </div>
                 </div>
