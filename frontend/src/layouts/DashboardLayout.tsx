@@ -236,7 +236,7 @@ export function DashboardLayout() {
                                 <Avatar style={{ backgroundColor: '#2563eb' }} icon={<UserOutlined />} />
                                 <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
                                     <Text strong style={{ fontSize: 13 }}>{username}</Text>
-                                    <Text type="secondary" style={{ fontSize: 11 }}>{role.charAt(0).toUpperCase() + role.slice(1)}</Text>
+                                    <Text type="secondary" style={{ fontSize: 11 }}>{role === 'admin' ? 'Администратор' : role === 'landlord' ? 'Арендодатель' : 'Арендатор'}</Text>
                                 </div>
                             </Space>
                         </Dropdown>
