@@ -184,16 +184,21 @@ tenant_router = APIRouter(prefix="/tenants", tags=["tenants"])
 async def read_tenants(search: str = Query(None), db: AsyncSession = Depends(get_session), curr_user: User = landlord_access):
     stmt = select(Tenant).distinct()
     if curr_user.role == UserRole.landlord:
-        stmt = stmt.join(LeaseContract, LeaseContract.tenant_id == Tenant.id)\
-                   .join(Property, Property.id == LeaseContract.property_id)\
-                   .where(Property.owner_id == curr_user.id)
+        contract_tenant_ids = select(LeaseContract.tenant_id).join(
+            Property, Property.id == LeaseContract.property_id
+        ).where(Property.owner_id == curr_user.id)
+        stmt = stmt.where(or_(
+            Tenant.id.in_(contract_tenant_ids),
+            Tenant.created_by_id == curr_user.id,
+        ))
     if search:
         stmt = stmt.where(or_(Tenant.name.ilike(f"%{search}%"), Tenant.phone.ilike(f"%{search}%")))
     return (await db.execute(stmt)).scalars().all()
 
 @tenant_router.post("", response_model=TenantResponse)
 async def create_tenant(tin: TenantCreate, db: AsyncSession = Depends(get_session), curr_user: User = landlord_access):
-    t = Tenant(**tin.model_dump()); db.add(t); await db.commit(); await db.refresh(t); return t
+    t = Tenant(**tin.model_dump(), created_by_id=curr_user.id)
+    db.add(t); await db.commit(); await db.refresh(t); return t
 
 contract_router = APIRouter(prefix="/contracts", tags=["contracts"])
 @contract_router.get("", response_model=List[ContractResponse])
@@ -221,8 +226,13 @@ async def create_contract(cin: ContractCreate, db: AsyncSession = Depends(get_se
     db.add(c); await db.flush()
     await generate_payment_schedule(db, c); await db.refresh(c, ['payments'])
     await db.commit()
-    await db.refresh(c)
-    return c
+
+    stmt2 = select(LeaseContract).options(
+        selectinload(LeaseContract.payments),
+        selectinload(LeaseContract.property).selectinload(Property.owner),
+        selectinload(LeaseContract.tenant),
+    ).where(LeaseContract.id == c.id)
+    return (await db.execute(stmt2)).scalar_one()
 
 @contract_router.patch("/{id}/passport", response_model=ContractResponse)
 async def update_contract_passport(

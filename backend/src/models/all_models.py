@@ -78,6 +78,7 @@ class TenantType(str, enum.Enum):
 class Tenant(AuditableBase):
     __tablename__ = "tenants"
     user_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"), nullable=True, unique=True)
+    created_by_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
     type: Mapped[TenantType] = mapped_column(Enum(TenantType))
     name: Mapped[str] = mapped_column(String, index=True)
     phone: Mapped[str] = mapped_column(String, unique=True, index=True)

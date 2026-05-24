@@ -81,7 +81,7 @@ export function Tenants() {
                     <Text type="secondary">
                         {role === 'admin'
                             ? 'Все зарегистрированные арендаторы системы'
-                            : 'Арендаторы, с которыми у вас есть переписка или договор'}
+                            : 'Арендаторы из ваших договоров и добавленные вручную'}
                     </Text>
                 </div>
                 <Button type="primary" icon={<TeamOutlined />} onClick={() => setOpen(true)}>
@@ -111,7 +111,7 @@ export function Tenants() {
                                 image={Empty.PRESENTED_IMAGE_SIMPLE}
                                 description={
                                     role === 'landlord'
-                                        ? 'Нет арендаторов. Они появятся, когда кто-то начнёт с вами переписку.'
+                                        ? 'Нет арендаторов. Добавьте вручную или создайте договор через переписку.'
                                         : 'Нет арендаторов'
                                 }
                             />
