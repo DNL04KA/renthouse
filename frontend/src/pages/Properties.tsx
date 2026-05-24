@@ -108,12 +108,16 @@ export function Properties() {
             key: 'info',
             render: (_: any, r: any) => (
                 <Space size="middle">
-                    <div style={{ width: 60, height: 60, borderRadius: 10, overflow: 'hidden', background: '#f1f5f9', flexShrink: 0 }}>
-                        <img
-                            src={r.images?.[0] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&h=120&fit=crop'}
-                            alt="thumb"
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        />
+                    <div style={{ width: 60, height: 60, borderRadius: 10, overflow: 'hidden', background: '#f1f5f9', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        {r.images?.[0] ? (
+                            <img
+                                src={r.images[0]}
+                                alt="thumb"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                        ) : (
+                            <BuildOutlined style={{ fontSize: 28, color: '#94a3b8' }} />
+                        )}
                     </div>
                     <div>
                         <Text strong style={{ fontSize: 14 }}>{r.city}, {r.street}</Text>
