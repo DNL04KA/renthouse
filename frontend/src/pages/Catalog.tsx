@@ -246,11 +246,17 @@ export function Catalog() {
                                         style={{ borderRadius: 16, overflow: 'hidden', border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}
                                         cover={
                                             <div style={{ height: 200, overflow: 'hidden', position: 'relative' }}>
-                                                <img
-                                                    alt="property"
-                                                    src={p.images?.[0] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop'}
-                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
-                                                />
+                                                {p.images?.[0] ? (
+                                                    <img
+                                                        alt="property"
+                                                        src={p.images[0]}
+                                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+                                                    />
+                                                ) : (
+                                                    <div style={{ width: '100%', height: '100%', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                                        <BuildOutlined style={{ fontSize: 52, color: '#cbd5e1' }} />
+                                                    </div>
+                                                )}
                                                 <div style={{
                                                     position: 'absolute', top: 12, left: 12,
                                                     background: p.listing_type === 'sale' ? '#7c3aed' : '#2563eb',
