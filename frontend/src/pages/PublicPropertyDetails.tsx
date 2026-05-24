@@ -111,7 +111,7 @@ export function PublicPropertyDetails() {
 
     const images: string[] = Array.isArray(prop.images) && prop.images.length > 0
         ? prop.images
-        : ['https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80'];
+        : [];
 
     const isSale = prop.listing_type === 'sale';
     const displayPrice = isSale && prop.sale_price
@@ -137,12 +137,17 @@ export function PublicPropertyDetails() {
                             styles={{ body: { padding: 0 } }}
                         >
                             <div style={{ position: 'relative', height: 420, overflow: 'hidden', background: '#e2e8f0' }}>
-                                <img
-                                    src={images[activeImage]}
-                                    alt="property"
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                    onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80'; }}
-                                />
+                                {images.length > 0 ? (
+                                    <img
+                                        src={images[activeImage]}
+                                        alt="property"
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    />
+                                ) : (
+                                    <div style={{ width: '100%', height: '100%', background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <BuildOutlined style={{ fontSize: 80, color: '#cbd5e1' }} />
+                                    </div>
+                                )}
                                 <div style={{ position: 'absolute', top: 12, left: 12 }}>
                                     <Tag color={isSale ? 'purple' : 'blue'} style={{ fontSize: 13, padding: '4px 12px' }}>
                                         {isSale ? 'Продажа' : 'Аренда'}
@@ -168,7 +173,6 @@ export function PublicPropertyDetails() {
                                             <img
                                                 src={img} alt=""
                                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                                onError={e => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=120&q=60'; }}
                                             />
                                         </div>
                                     ))}
