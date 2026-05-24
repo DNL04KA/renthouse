@@ -666,11 +666,14 @@ export function Contracts() {
     });
 
     const createMutation = useMutation({
-        mutationFn: (vals: any) => apiClient.post('/contracts', {
-            ...vals,
-            start_date: vals.dates[0].format('YYYY-MM-DD'),
-            end_date: vals.dates[1].format('YYYY-MM-DD'),
-        }),
+        mutationFn: (vals: any) => {
+            const { dates, ...rest } = vals;
+            return apiClient.post('/contracts', {
+                ...rest,
+                start_date: dates[0].format('YYYY-MM-DD'),
+                end_date: dates[1].format('YYYY-MM-DD'),
+            });
+        },
         onSuccess: () => {
             qc.invalidateQueries({ queryKey: ['contracts'] });
             qc.invalidateQueries({ queryKey: ['props_avail'] });
