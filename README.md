@@ -108,8 +108,9 @@ frontend/
 docker-compose.yml
 ```
 
-The repository root also contains the diagrams produced for the written part of
-the project (use case, IDEF0, DFD, database schema).
+`docs/diagrams/` holds the diagrams produced for the written part of the project
+(use case, IDEF0, DFD, database schema); `docs/reports/` holds the progress
+notes written while building it.
 
 ## Data model
 
