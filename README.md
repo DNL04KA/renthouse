@@ -1,47 +1,43 @@
-# RentHouse - Система управления арендой недвижимости
+# RentHouse
 
-## Быстрый старт
+Property rental management system: a public listings catalogue plus role-based
+dashboards for landlords, tenants and administrators.
 
-### Требования
-- Docker и Docker Compose (рекомендуется)
-- или PostgreSQL 12+ + Node.js 18+ + Python 3.11+
+FastAPI and PostgreSQL on the back end, React and Ant Design on the front end.
+Built as a diploma project.
 
-### Вариант 1: С Docker (рекомендуется)
+Live front end: https://renthouse-sigma.vercel.app
+
+## Quick start
+
+### With Docker
 
 ```bash
-cd /Users/nesterovichdaniil/Desktop/diplomkzentag
 docker-compose up --build
 ```
 
-Приложение будет доступно:
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:8000
-- **API Docs**: http://localhost:8000/docs
+- Front end: http://localhost:5173
+- API: http://localhost:8000
+- API docs (Swagger): http://localhost:8000/docs
 
-### Вариант 2: Локальный запуск (требует PostgreSQL)
+### Without Docker
 
-#### Backend
+Requirements: PostgreSQL 12+, Python 3.11+, Node.js 18+.
+
+Back end:
 
 ```bash
 cd backend
-source venv/bin/activate
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-
-# Запуск миграций
 alembic upgrade head
-
-# Создание тестового администратора
-python seed_admin.py
-
-# Заполнение тестовых данных
-python seed_marketplace.py
-python seed_data.py
-
-# Запуск сервера
+python seed_admin.py        # creates the admin account
+python seed_marketplace.py  # demo properties
+python seed_data.py         # demo contracts and payments
 uvicorn src.main:app --reload --port 8000
 ```
 
-#### Frontend
+Front end:
 
 ```bash
 cd frontend
@@ -49,151 +45,74 @@ npm install
 npm run dev
 ```
 
----
+The front end reads the API URL from `VITE_API_URL` and falls back to
+`http://localhost:8000/api/v1`.
 
-## Учетные данные для тестирования
+The seed scripts create an administrator with a default password. Change it
+before exposing an instance to the internet.
 
-### Администратор
-- **Логин**: admin
-- **Пароль**: admin123
-- **Роль**: admin
+## Features by role
 
-### Арендодатель (владелец недвижимости)
-- **Логин**: landlord1
-- **Пароль**: password
-- **Роль**: landlord
+**Guest** — public catalogue of properties for rent and for sale, property
+details, filters by city, price, type, rooms and listing type, a map view of
+listings, registration and login.
 
-### Арендатор
-- **Регистрация**: доступна через кнопку "Регистрация"
-- **Роль**: tenant
+**Tenant** — own lease contracts, payment schedule, paying a due payment,
+payment history, personal dashboard.
 
----
+**Landlord** — properties (create, edit, status), tenants, lease contracts with
+DOCX export, payments and overdue tracking, messaging with tenants, reports,
+per-property statistics.
 
-## Функции по ролям
+**Administrator** — everything above plus user management and currency
+management.
 
-### Гость (неавторизованный)
-✅ Просмотр публичного каталога недвижимости  
-✅ Просмотр деталей объекта  
-✅ Фильтрация по городу, цене, типу, количеству комнат  
-✅ Регистрация и вход  
+## Stack
 
-### Арендатор
-✅ Просмотр своих договоров аренды  
-✅ Просмотр графика платежей  
-✅ Оплата переводов  
-✅ Просмотр истории платежей  
-✅ Персональный dashboard с статистикой  
+**Back end** — FastAPI, SQLAlchemy 2 (async) with asyncpg, Alembic migrations,
+PostgreSQL, Pydantic v2, JWT auth with passlib/bcrypt, python-docx.
 
-### Арендодатель (владелец)
-✅ Создание и управление объектами недвижимости  
-✅ Добавление и управление арендаторами  
-✅ Создание арендных договоров  
-✅ Управление платежами  
-✅ Просмотр статистики по объектам  
-✅ Отслеживание просроченных платежей  
-✅ Dashboard с финансовой информацией  
+**Front end** — React 18, TypeScript, Vite 5, Ant Design 5, React Router 6,
+TanStack Query, Axios, Leaflet (react-leaflet) for maps, docx + file-saver for
+contract export.
 
-### Администратор
-✅ Полный доступ ко всем функциям  
-✅ Управление пользователями  
+**Infrastructure** — Docker and Docker Compose, nginx for the production front
+end bundle.
 
----
+## API
 
-## API Endpoints
+All routes live under `/api/v1`, grouped into routers: `auth`, `properties`,
+`tenants`, `contracts`, `payments`, `conversations`, `public`, `reports`,
+`admin`, `currencies`. The full, always-current reference is the generated
+Swagger UI at `/docs`.
 
-### Аутентификация
-- `POST /api/v1/auth/register` - Регистрация новго пользователя
-- `POST /api/v1/auth/login` - Вход в систему
-
-### Недвижимость
-- `GET /api/v1/properties` - Получить список недвижимости (с фильтрами)
-- `GET /api/v1/properties/{id}` - Получить детали объекта
-- `POST /api/v1/properties` - Создать новый объект (landlord/admin)
-
-### Арендаторы
-- `GET /api/v1/tenants` - Список арендаторов (landlord/admin)
-- `POST /api/v1/tenants` - Добавить арендатора (landlord/admin)
-
-### Договоры
-- `GET /api/v1/contracts` - Получить договоры (фильтруются по роли)
-- `POST /api/v1/contracts` - Создать договор (landlord/admin)
-
-### Платежи
-- `GET /api/v1/payments` - Получить платежи (фильтруются по роли)
-- `PATCH /api/v1/payments/{id}/pay` - Оплатить платеж
-- `POST /api/v1/payments/update_overdue` - Обновить просроченные платежи
-
----
-
-## Исправленные проблемы
-
-✅ Добавлен фильтр по типу недвижимости (`type`)  
-✅ Исправлена регистрация арендатора (правильно сохраняется телефон)  
-✅ Добавлено ограничение данных по ролям:
-   - Арендодатель видит только свои объекты и платежи  
-   - Арендатор видит только свои договоры и платежи  
-   - Гость видит только доступные объекты  
-✅ Добавлен отдельный endpoint для получения детей объекта по ID (`GET /properties/{id}`)  
-✅ Исправлен статус объекта в каталоге (теперь показывает реальный статус)  
-✅ Заменены локальные пути изображений на интернет-ссылки (Unsplash)  
-✅ Добавлены Dockerfile и docker-compose для удобного развертывания  
-
----
-
-## Структура проекта
+## Project structure
 
 ```
-diplomkzentag/
-├── backend/
-│   ├── src/
-│   │   ├── main.py              # FastAPI приложение
-│   │   ├── api/v1/endpoints.py  # API routes
-│   │   ├── models/all_models.py # SQLAlchemy models
-│   │   ├── schemas/all_schemas.py # Pydantic schemas
-│   │   ├── services/            # Business logic
-│   │   └── core/                # Config, DB, security
-│   ├── alembic/                 # Database migrations
-│   ├── seed_*.py                # Test data scripts
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── pages/               # React pages
-│   │   ├── layouts/             # Layout components
-│   │   ├── api/client.ts        # API client
-│   │   └── main.tsx             # Entry point
-│   └── package.json
-└── docker-compose.yml
+backend/
+  src/
+    main.py                 FastAPI app
+    api/v1/endpoints.py     routers
+    models/all_models.py    SQLAlchemy models
+    schemas/all_schemas.py  Pydantic schemas
+    services/               business logic
+    core/                   config, database, security
+  alembic/                  migrations
+  seed_*.py                 demo data
+frontend/
+  src/
+    pages/                  screens (catalogue, dashboard, contracts, payments, …)
+    layouts/                public and dashboard layouts
+    components/             shared components, including the map
+    api/client.ts           axios clients (authenticated and public)
+docker-compose.yml
 ```
 
----
+The repository root also contains the diagrams produced for the written part of
+the project (use case, IDEF0, DFD, database schema).
 
-## Технологический стек
+## Data model
 
-**Backend:**
-- FastAPI 0.128.8
-- SQLAlchemy 2.0+ (async)
-- Alembic (migrations)
-- PostgreSQL
-- JWT для аутентификации
-- Pydantic для валидации
-
-**Frontend:**
-- React 18.2
-- Vite 5.2
-- Ant Design 5.16
-- React Router 6.22
-- Axios для HTTP запросов
-- React Query для кэширования данных
-
-**DevOps:**
-- Docker & Docker Compose
-- Python 3.11
-- Node.js 18+
-
----
-
-## Контакты и поддержка
-
-Проект разработан как дипломная работа для системы управления арендой недвижимости.
-
-Все критические функции реализованы и протестированы.
+Users with roles (admin / landlord / tenant), properties, tenants, lease
+contracts, payments, and conversations with messages. Properties support both
+rent and sale listings and multiple currencies.
