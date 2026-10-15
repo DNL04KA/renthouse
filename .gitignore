@@ -16,3 +16,6 @@ frontend/dist/
 *.log
 .idea/
 .vscode/
+
+# Local tooling
+.claude/
